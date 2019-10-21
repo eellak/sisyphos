@@ -1,0 +1,61 @@
+.sisTable TH{
+    font-family:Verdana;
+    font-size:8pt;
+    border-style:solid;
+    border-width:thin;
+    border-color:Gray;
+	background-color:LightSalmon;
+}
+
+.sisTable, .sisTable TD{
+    font-family:Verdana;
+    font-size:8pt;
+    border-style:solid;
+    border-width:thin;
+    border-color:Gray;
+}
+
+.sisTable TR{
+	background-color: LightBlue;
+}
+
+.sisTableLine TH{
+        font-family:Verdana;
+        font-size:8pt;
+        border-bottom: 2px solid lightyellow;
+        border-collapse: collapse;
+		background-color:LightSalmon;
+}
+
+.sisTableLine TD{
+        font-family:Verdana;
+        font-size:8pt;
+        font-weight: bold;
+        border-bottom: 2px solid lightyellow;
+        border-collapse: collapse;
+}
+
+.sisTableLine TR{
+	background-color: LightBlue;
+}
+
+.msg{
+	font-family:Verdana;
+	font-size:9pt;
+	font-weight: bold;
+	color: #25237A;
+}
+
+.msgError{
+	font-family:Verdana;
+	font-size:9pt;
+	font-weight: bold;
+	color: OrangeRed;
+}
+
+.msgSuccess{
+	font-family:Verdana;
+	font-size:9pt;
+	font-weight: bold;
+	color: Green;
+}

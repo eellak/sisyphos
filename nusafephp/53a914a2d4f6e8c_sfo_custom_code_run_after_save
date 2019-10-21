@@ -1,0 +1,249 @@
+$name = '#sad_name#';
+$table = '#sad_table#';
+$selected = '#selectedList#';
+$order = '#orderList#';
+$selectedValue = '#selectedValueList#';
+$where = '#sad_where_clause#';
+if($where == '') {
+	$where = '';
+} else {
+	$where = 'WHERE '.$where;
+}
+
+$table_id = '#'.'TABLE_ID#';
+
+$sql_var = '$sql';
+
+//table sql
+$table_sql = <<<EOSQL
+$sql_var = "
+	CREATE TABLE $table_id
+	SELECT
+		*
+	FROM
+		$table
+	$where
+";
+nuRunQuery($sql_var);
+EOSQL;
+
+$table_sql = str_replace("'","\'",$table_sql);
+
+$pip = uniqid(1);
+
+$sql = "
+	INSERT INTO zzzsys_php (
+		zzzsys_php_id,
+		slp_code,
+		slp_description,
+		slp_group,
+		slp_php,
+		slp_zzzsys_form_id,
+		slp_nonsecure
+	) VALUES (
+		'$pip',
+		'$name',
+		'$name',
+		'$name',
+		'$table_sql',
+		'51bf99ca103dbd5',
+		'1'
+	)
+";
+nuRunQuery($sql);
+
+//layout
+$r = nuReportR();
+
+$objNum = 1000;
+$left = 50;
+$fieldTop = 5;
+$labelTop = 40;
+
+$r->groups[2]->sections[0]->objects[] = nuReportO('labelTitle', 5, 50, "label", $name, 500, 'l', 0, 20, 25);
+$r->groups[2]->sections[0]->height = 70;
+
+$footerText = 'Page #page# of #pages#, Printed: #code#, Printed On: #year#-#month#-#day# #hour#:#minute#:#second#';
+$r->groups[2]->sections[1]->objects[] = nuReportO('labelFooter', 5, 50, "label", $footerText, 700, 'l', 0, 10, 18);
+
+$attributes = explode(",",$selectedValue);
+$fields = explode(",",$selected);
+
+for($i = 0; $i < sizeof($attributes); $i++) {
+
+	$attr = explode(";",$attributes[$i]);
+
+	if(($left + $attr[1]) >= 840) {
+		$left = 50;
+		$labelTop += 25;
+		$fieldTop += 25;
+		$r->groups[0]->sections[0]->height = $fieldTop + 30;
+		$r->groups[2]->sections[0]->height = $labelTop + 30;
+	}
+	
+	$objNum++;
+	
+	$r->groups[2]->sections[0]->objects[] = nuReportO('label'.$objNum, $labelTop, $left, "label", $attr[0], $attr[1], $attr[2], $attr[3], 10, 18);
+	$r->groups[0]->sections[0]->objects[] = nuReportO('object'.$objNum, $fieldTop, $left, "field", $fields[$i], $attr[1], $attr[2], $attr[3], 10, 18);
+	
+	$left += $attr[1] + 20;
+
+}
+
+$labelTop += 25;
+
+$r->groups[2]->sections[0]->objects[] = nuReportO('headerLine', $labelTop , 20, "label", '', 800, 'l', 0, 20, 3);
+
+$orders = explode(",",$order);
+
+for($i = 0; $i < (sizeof($orders)); $i++) {
+	$r->groups[($i+3)]->sections[0]->height = 20;
+	$r->groups[($i+3)]->sections[1]->height = 20;
+	$r->groups[($i+3)]->sortField = $orders[$i];
+}
+
+$layout = json_encode($r);
+
+//creating the report
+$id = uniqid(1);
+
+$sql = "
+	INSERT INTO zzzsys_report (
+		zzzsys_report_id,
+		sre_code,
+		sre_description,
+		sre_group,
+		sre_zzzsys_form_id,
+		sre_zzzsys_php_id,
+		sre_layout
+	) VALUES (
+		'$id',
+		'$name',
+		'$name',
+		'Custom',
+		'51bf99ca103dbd5',
+		'$pip',
+		'$layout'
+	)
+";
+nuRunQuery($sql);
+
+function nuReportR(){
+
+	$o                   = new stdClass;
+
+	$o->bottom           = 260;
+	$o->currentGroup     = 0;
+	$o->height           = 297;
+	$o->left             = 30;
+	$o->orientation      = "P";
+	$o->paper            = "A4";
+	$o->right            = 30;
+	$o->top              = 30;
+	$o->width            = 210;
+	$o->groups[]         = nuReportG(10);
+	$o->groups[]         = nuReportG(0);
+	$o->groups[]         = nuReportG(1);
+	$o->groups[]         = nuReportG(2);
+	$o->groups[]         = nuReportG(3);
+	$o->groups[]         = nuReportG(4);
+	$o->groups[]         = nuReportG(5);
+	$o->groups[]         = nuReportG(6);
+	$o->groups[]         = nuReportG(7);
+	$o->groups[]         = nuReportG(8);
+	$o->groups[]         = nuReportG(9);
+
+	return $o;
+
+}
+
+	
+function nuReportG($f){
+
+	$g                    = new stdClass;
+	$h                    = 0;
+	$l                    = '';
+		
+	if($f == 10){$l = 'Detail';$h = 40;}
+	if($f == 0) {$l = 'Report';$h = 40;}
+	if($f == 1) {$l = 'Page';$h = 40;}
+
+	$g->sortBy            = "a";
+	$g->sortField         = $l;
+
+	$s                    = new stdClass;
+
+	$s->color             = "#FFFFFF";
+	$s->height            = $h;
+	$s->id                = "";
+	$s->label             = $l . " Header";
+	$s->margins           = 4;
+	$s->objects           = array();
+	$s->page_break        = 0;
+	$s->top               = 110;
+
+	$g->sections[]        = $s;
+	
+	if($f == 10){return $g;}                       //-- no second section
+
+	$s                    = new stdClass;
+
+	$s->color             = "#FFFFFF";
+	$s->height            = $h;
+	$s->id                = "";
+	$s->label             = $l . " Footer";
+	$s->margins           = 6;
+	$s->objects           = array();
+	$s->page_break        = 0;
+	$s->top               = 150;
+
+	$g->sections[]        = $s;
+	
+	return $g;
+	
+}
+	
+
+
+function nuReportO($i, $t, $l, $type, $field, $width, $align, $format, $fontSize, $height){
+
+	$o                    = new stdClass;
+
+	if($i == 'headerLine') {
+		$o->backgroundColor   = "black";
+	} else {
+		$o->backgroundColor   = "white";
+	}	
+	
+	$o->borderColor       = "black";
+	$o->borderWidth       = 0;
+	$o->fieldName         = "$field";        //-- trp_delivery_date for field or Customer Name for label
+	$o->fontColor         = "black";
+	$o->fontFamily        = "helvetica";
+	$o->fontSize          = "$fontSize";
+	
+	if($type = 'label' && $i != 'labelFooter') {
+		$o->fontWeight        = "B";
+	} else {
+		$o->fontWeight        = "";
+	}	
+	
+	$o->format            = "$format";        // blank or 0-31
+	$o->group             = 0;
+	$o->height            = $height;
+	$o->id                = $i;        //-- eg. object1009 starting at 1000
+	$o->left              = $l;
+	$o->maxRows           = 0;
+	$o->minRows           = 0;
+	$o->name              = $i;        //-- eg. object1009 starting at 1000
+	$o->objectType        = "$type";
+	$o->section           = 0;
+	$o->selected          = 0;
+	$o->textAlign         = "$align";
+	$o->top               = $t;
+	$o->width             = $width;
+	$o->zIndex            = 100;
+
+	return $o;
+	
+}

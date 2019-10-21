@@ -1,0 +1,29 @@
+
+$s = "
+CREATE TABLE #TABLE_ID# 
+SELECT 
+zzzsys_form_id AS theid, 
+sfo_name      AS thecode, 
+sfo_title     AS thedesc 
+FROM zzzsys_form 
+WHERE (zzzsys_form_id NOT LIKE '#nu_denied#' OR zzzsys_form_id = 'nuhome')
+
+
+";
+
+nuRunQuery($s);
+
+
+$s = "
+INSERT INTO #TABLE_ID#  
+SELECT 
+zzzsys_object_id                    AS theid, 
+sob_all_name                       AS thecode,
+CONCAT('Subform of : ', sfo_title) AS thedesc
+FROM zzzsys_object
+INNER JOIN zzzsys_form ON sob_zzzsys_form_id = zzzsys_form_id
+WHERE sob_all_type = 'subform'
+AND sob_zzzsys_form_id NOT LIKE '#nu_denied#'
+";
+
+nuRunQuery($s);

@@ -1,0 +1,12 @@
+$s = "SELECT * FROM zzzsys_browse WHERE sbr_zzzsys_form_id = '#RECORD_ID#' ORDER BY sbr_order";
+$t = nuRunQuery($s);
+$o = 0;
+
+while($r = db_fetch_object($t)){
+
+   $o = $o + 10;
+   $u = "UPDATE zzzsys_browse SET sbr_order = '$o' WHERE zzzsys_browse_id = '$r->zzzsys_browse_id'";
+   
+   nuRunQuery($u);
+
+}

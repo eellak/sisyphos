@@ -1,0 +1,6 @@
+if('#sre_zzzsys_sql#' == '' and '#sre_zzzsys_php_id#' == ''){
+
+   $MESS = "SQL or PHP is required to create a Report.."; 
+   nuDisplayError($MESS);
+
+}

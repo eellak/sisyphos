@@ -1,0 +1,946 @@
+﻿<?xml version="1.0" encoding="windows-1253"?>
+<timetable ascttversion="2016.9.6" importtype="database" options="idprefix:MyApp" displayname="MyApp sample XML configuration" displaycountries="gr">
+   <teachers options="import:disable,canadd,canremove,canupdate,primarytt,silent" columns="id,name,short">
+      <teacher id="*1" name="ΚΑΘΗΓΗΤΗΣ ΕΜΜΑΝΟΥΗΛ" short="ΚΑΘΗΓΗΤΗΣ01"/>
+      <teacher id="*2" name="ΚΑΘΗΓΗΤΗΣ ΚΑΛΛΙΟΠΗ" short="ΚΑΘΗΓΗΤΗΣ02"/>
+      <teacher id="*3" name="ΚΑΘΗΓΗΤΗΣ ΛΑΜΠΡΙΝΗ" short="ΚΑΘΗΓΗΤΗΣ03"/>
+      <teacher id="*4" name="ΚΑΘΗΓΗΤΗΣ ΜΑΡΙΑ" short="ΚΑΘΗΓΗΤΗΣ04"/>
+      <teacher id="*5" name="ΚΑΘΗΓΗΤΗΣ ΝΙΚΟΛΑΟΣ" short="ΚΑΘΗΓΗΤΗΣ05"/>
+      <teacher id="*6" name="ΚΑΘΗΓΗΤΗΣ ΓΕΩΡΓΙΟΣ" short="ΚΑΘΗΓΗΤΗΣ06"/>
+      <teacher id="*7" name="ΚΑΘΗΓΗΤΗΣ ΝΙΚΟΛΑΟΣ" short="ΚΑΘΗΓΗΤΗΣ07"/>
+      <teacher id="*8" name="ΚΑΘΗΓΗΤΗΣ ΓΕΩΡΓΙΟΣ" short="ΚΑΘΗΓΗΤΗΣ08"/>
+      <teacher id="*9" name="ΚΑΘΗΓΗΤΗΣ ΙΩΑΝΝΗΣ" short="ΚΑΘΗΓΗΤΗΣ09"/>
+      <teacher id="*10" name="ΚΑΘΗΓΗΤΗΣ ΝΙΚΟΛΑΟΣ" short="ΚΑΘΗΓΗΤΗΣ10"/>
+      <teacher id="*11" name="ΚΑΘΗΓΗΤΗΣ ΠΑΥΛΟΣ" short="ΚΑΘΗΓΗΤΗΣ11"/>
+      <teacher id="*12" name="ΚΑΘΗΓΗΤΗΣ ΚΑΛΛΙΟΠΗ" short="ΚΑΘΗΓΗΤΗΣ12"/>
+      <teacher id="*13" name="ΚΑΘΗΓΗΤΗΣ ΜΙΧΑΗΛ" short="ΚΑΘΗΓΗΤΗΣ13"/>
+      <teacher id="*14" name="ΚΑΘΗΓΗΤΗΣ ΜΑΡΙΑ" short="ΚΑΘΗΓΗΤΗΣ14"/>
+      <teacher id="*15" name="ΚΑΘΗΓΗΤΗΣ ΙΩΑΝΝΗΣ" short="ΚΑΘΗΓΗΤΗΣ15"/>
+      <teacher id="*16" name="ΚΑΘΗΓΗΤΗΣ ΜΑΡΙΑ" short="ΚΑΘΗΓΗΤΗΣ16"/>
+      <teacher id="*17" name="ΚΑΘΗΓΗΤΗΣ ΕΙΡΗΝΗ" short="ΚΑΘΗΓΗΤΗΣ17"/>
+      <teacher id="*18" name="ΚΑΘΗΓΗΤΗΣ ΑΝΝΑ" short="ΚΑΘΗΓΗΤΗΣ18"/>
+      <teacher id="*19" name="ΚΑΘΗΓΗΤΗΣ ΕΥΑΓΓΕΛΙΑ" short="ΚΑΘΗΓΗΤΗΣ19"/>
+      <teacher id="*20" name="ΚΑΘΗΓΗΤΗΣ ΜΑΡΙΑ" short="ΚΑΘΗΓΗΤΗΣ20"/>
+      <teacher id="*21" name="ΚΑΘΗΓΗΤΗΣ ΙΩΑΝΝΗΣ" short="ΚΑΘΗΓΗΤΗΣ21"/>
+      <teacher id="*22" name="ΚΑΘΗΓΗΤΗΣ ΕΥΘΥΜΗΣ" short="ΚΑΘΗΓΗΤΗΣ22"/>
+      <teacher id="*23" name="ΚΑΘΗΓΗΤΗΣ ΑΝΤΩΝΗΣ" short="ΚΑΘΗΓΗΤΗΣ23"/>
+      <teacher id="*24" name="ΚΑΘΗΓΗΤΗΣ ΝΙΚΟΛΑΟΣ" short="ΚΑΘΗΓΗΤΗΣ24"/>
+      <teacher id="*25" name="ΚΑΘΗΓΗΤΗΣ ΝΙΚΟΛΑΟΣ" short="ΚΑΘΗΓΗΤΗΣ25"/>
+      <teacher id="*26" name="ΚΑΘΗΓΗΤΗΣ ΕΛΕΝΗ" short="ΚΑΘΗΓΗΤΗΣ26"/>
+      <teacher id="*27" name="ΚΑΘΗΓΗΤΗΣ ΒΑΣΙΛΗΣ" short="ΚΑΘΗΓΗΤΗΣ27"/>
+      <teacher id="*28" name="ΚΑΘΗΓΗΤΗΣ ΚΩΣΤΑΝΤΙΝΟΣ" short="ΚΑΘΗΓΗΤΗΣ28"/>
+      <teacher id="*29" name="ΚΑΘΗΓΗΤΗΣ ΝΕΚΤΑΡΙΟΣ" short="ΚΑΘΗΓΗΤΗΣ29"/>
+      <teacher id="*30" name="ΚΑΘΗΓΗΤΗΣ ΕΜΜΑΝΟΥΗΛ" short="ΚΑΘΗΓΗΤΗΣ30"/>
+      <teacher id="*31" name="ΚΑΘΗΓΗΤΗΣ ΧΑΡΙΚΛΕΙΑ" short="ΚΑΘΗΓΗΤΗΣ31"/>
+      <teacher id="*32" name="ΚΑΘΗΓΗΤΗΣ ΑΛΕΞΑΝΔΡΟΣ" short="ΚΑΘΗΓΗΤΗΣ32"/>
+      <teacher id="*33" name="ΚΑΘΗΓΗΤΗΣ ΔΗΜΟΣΘΕΝΗΣ" short="ΚΑΘΗΓΗΤΗΣ33"/>
+   </teachers>
+   <classes options="import:disable,canadd,canremove,canupdate,primarytt,silent" columns="id,name">
+      <class id="*1" name="Αο1"/>
+      <class id="*2" name="Αο2"/>
+      <class id="*3" name="Ατ1"/>
+      <class id="*4" name="Ατ2"/>
+      <class id="*5" name="ΒηΑ"/>
+      <class id="*6" name="ΒηΥΣ"/>
+      <class id="*7" name="ΒοΔΟ"/>
+      <class id="*8" name="ΒοΕΔ"/>
+      <class id="*9" name="ΒοΤ"/>
+      <class id="*10" name="ΒπΔ"/>
+      <class id="*11" name="ΒπΕΛ"/>
+      <class id="*12" name="ΓηΑ"/>
+      <class id="*13" name="ΓηΔΤ"/>
+      <class id="*14" name="ΓοΔΟ"/>
+      <class id="*15" name="ΓοΤ"/>
+      <class id="*16" name="ΓπΔ"/>
+      <class id="*17" name="ΓπΕΛ"/>
+   </classes>
+   <subjects options="import:disable,canadd,canremove,canupdate,primarytt,silent" columns="id,name,short">
+      <subject id="*1" name="Α Αγγλικά" short="ΑΑγγλ"/>
+      <subject id="*2" name="Α Άλγεβρα" short="ΑΆλγεβρα"/>
+      <subject id="*3" name="Α Γεωμετρία" short="ΑΓεωμ"/>
+      <subject id="*4" name="Α Θρησκευτικά" short="ΑΘρησκ"/>
+      <subject id="*5" name="Α Ιστορία" short="ΑΙστορ"/>
+      <subject id="*6" name="Α Λογοτεχνία" short="ΑΛογοτ"/>
+      <subject id="*7" name="Α Νεοελ. Γλώσσα" short="ΑΓλώσ"/>
+      <subject id="*8" name="Α Πολιτειακή Παιδεία" short="ΑΠολΠαιδ"/>
+      <subject id="*9" name="Α Φυσική" short="ΑΦυσ"/>
+      <subject id="*10" name="Α Φυσική Αγωγή" short="ΑΓυμν"/>
+      <subject id="*11" name="Α Χημεία" short="ΑΧημ"/>
+      <subject id="*12" name="Α Ερευνητική Εργασία" short="ΑProject"/>
+      <subject id="*13" name="Αο Αρχές Λογιστικής" short="ΑοΑρχΛογιστ"/>
+      <subject id="*14" name="Αο Οργάνωση και Διοίκηση" short="ΑοΟργ&amp;Διοικ"/>
+      <subject id="*15" name="Αο Σχολικός Επαγγελματικός Προσανατολισμός" short="ΑοΣΕΠ"/>
+      <subject id="*16" name="Αο Τεχνολογίες Πληροφορίας και Επικοινωνιών" short="ΑοΠληροφ"/>
+      <subject id="*17" name="Ατ Αρχές Ηλεκτρονικής και Ηλεκτρολογίας" short="ΑτΗλεκτ"/>
+      <subject id="*18" name="Ατ Αρχές Μηχανολογίας" short="ΑτΜηχαν"/>
+      <subject id="*19" name="Ατ Σχολικός Επαγγελματικός Προσανατολισμός" short="ΑτΣΕΠ"/>
+      <subject id="*20" name="Ατ Τεχνικό Σχέδιο" short="ΑτΤεχνΣχεδ"/>
+      <subject id="*21" name="Ατ Τεχνολογίες Πληροφορίας και Επικοινωνιών" short="ΑτΠληροφ"/>
+      <subject id="*22" name="Β Αγγλικά" short="ΒΑγγλ"/>
+      <subject id="*23" name="Β Άλγεβρα" short="ΒΆλγεβρα"/>
+      <subject id="*24" name="Β Γεωμετρία" short="ΒΓεωμ"/>
+      <subject id="*25" name="Β Εισαγωγή στις Αρχές της Επιστήμης των Η/Υ" short="ΒΕπιστΗ/Υ"/>
+      <subject id="*26" name="Β Θρησκευτικά" short="ΒΘρησκ"/>
+      <subject id="*27" name="Β Λογοτεχνία" short="ΒΛογοτ"/>
+      <subject id="*28" name="Β Νεοελληνική Γλώσσα" short="ΒΓλωσ"/>
+      <subject id="*29" name="Β Φυσική" short="ΒΦυσ"/>
+      <subject id="*30" name="Β Φυσική Αγωγή" short="ΒΓυμν"/>
+      <subject id="*31" name="Β Χημεία" short="ΒΧημ"/>
+      <subject id="*32" name="ΒηΑ Αγγλικά Ειδικότητας" short="ΒηΑ ΑγγΕιδ"/>
+      <subject id="*33" name="ΒηΑ Αισθητήρες - Ενεργοποιητές" short="ΒηΑ Αισθ"/>
+      <subject id="*34" name="ΒηΑ Αισθητήρες - Ενεργοποιητές - Εργαστήριο" short="ΒηΑ ΕργΑισθ"/>
+      <subject id="*35" name="ΒηΑ Βασικά Ηλεκτρονικά" short="ΒηΑ ΒασΗλεκ"/>
+      <subject id="*36" name="ΒηΑ Βασικά Ηλεκτρονικά - Εργαστήριο" short="ΒηΑ ΕργΒασΗλεκ"/>
+      <subject id="*37" name="ΒηΑ Ηλεκτρονικές Κατασκευές - Εργαστήριο" short="ΒηΑ ΕργΗλεκΚατ"/>
+      <subject id="*38" name="ΒηΑ Συστήματα Αυτομάτου Ελέγχου" short="ΒηΑ ΣΑΕ"/>
+      <subject id="*39" name="ΒηΑ Συστήματα Αυτομάτου Ελέγχου - Εργαστήριο" short="ΒηΑ ΕργΣΑΕ"/>
+      <subject id="*40" name="ΒηΑ Ψηφιακά Ηλεκτρονικά" short="ΒηΑ ΨηφΗλεκ"/>
+      <subject id="*41" name="ΒηΑ Ψηφιακά Ηλεκτρονικά - Εργαστήριο" short="ΒηΑ ΕργΨηφΗλεκ"/>
+      <subject id="*42" name="ΒηΔΤ Αγγλικά Ειδικότητας" short="ΒηΔΤ ΑγγΕιδ"/>
+      <subject id="*43" name="ΒηΔΤ Βασικά Ηλεκτρονικά" short="ΒηΔΤ ΒασΗλεκ"/>
+      <subject id="*44" name="ΒηΔΤ Βασικά Ηλεκτρονικά - Εργαστήριο" short="ΒηΔΤ ΕργΒασΗλεκ"/>
+      <subject id="*45" name="ΒηΔΤ Εισαγωγή στα Δίκτυα και τις Επικοινωνίες" short="ΒηΔΤ Δίκτυα"/>
+      <subject id="*46" name="ΒηΔΤ Εισαγωγή στα Δίκτυα και τις Επικοινωνίες - Εργαστήριο" short="ΒηΔΤ ΕργΔίκτυα"/>
+      <subject id="*47" name="ΒηΔΤ Εργαστήριο Τηλεπικοινωνιακών Στοιχείων - Εργαστήριο" short="ΒηΔΤ ΕργΤηλΔικτ"/>
+      <subject id="*48" name="ΒηΔΤ Ηλεκτρονικές Κατασκευές - Εργαστήριο" short="ΒηΔΤ ΕργΗλεκΚατ"/>
+      <subject id="*49" name="ΒηΔΤ Ψηφιακά Ηλεκτρονικά" short="ΒηΔΤ ΨηφΗλεκ"/>
+      <subject id="*50" name="ΒηΔΤ Ψηφιακά Ηλεκτρονικά - Εργαστήριο" short="ΒηΔΤ ΕργΨηφΗλεκ"/>
+      <subject id="*51" name="ΒηΥΣ Αγγλικά Ειδικότητας" short="ΒηΥΣ ΑγγΕιδ"/>
+      <subject id="*52" name="ΒηΥΣ Βασικά Ηλεκτρονικά" short="ΒηΥΣ ΒασΗλεκ"/>
+      <subject id="*53" name="ΒηΥΣ Βασικά Ηλεκτρονικά - Εργαστήριο" short="ΒηΥΣ ΕργΒασΗλεκ"/>
+      <subject id="*54" name="ΒηΥΣ Εισαγωγή στις Επικοινωνίες και στα Υπολογιστικά Συστήματα" short="ΒηΥΣ Επικ&amp;ΥΣ"/>
+      <subject id="*55" name="ΒηΥΣ Εισαγωγή στις επικοινωνίες και στα υπολογιστικά συστήματα - Εργαστήριο" short="ΒηΥΣ ΕργΕπικ&amp;ΥΣ"/>
+      <subject id="*56" name="ΒηΥΣ Ηλεκτρονικές Διατάξεις - Εργαστήριο" short="ΒηΥΣ ΕργΗλεκΔιατ"/>
+      <subject id="*57" name="ΒηΥΣ Ηλεκτρονικές Κατασκευές - Εργαστήριο" short="ΒηΥΣ ΕργΗλεκΚατ"/>
+      <subject id="*58" name="ΒηΥΣ Ψηφιακά Ηλεκτρονικά" short="ΒηΥΣ ΨηφΗλεκ"/>
+      <subject id="*59" name="ΒηΥΣ Ψηφιακά Ηλεκτρονικά - Εργαστήριο" short="ΒηΥΣ ΕργΨηφΗλεκ"/>
+      <subject id="*60" name="ΒοΔΟ Αγγλικά Ειδικότητας I" short="ΒοΔΟ ΑγγΕιδ"/>
+      <subject id="*61" name="ΒοΔΟ Αρχές Λογιστικής ΙΙ" short="ΒοΔΟ ΑρχΛογΙΙ"/>
+      <subject id="*62" name="ΒοΔΟ Αρχές Λογιστικής ΙΙ - Εργαστήριο" short="ΒοΔΟ ΕργΑρχΛογΙΙ"/>
+      <subject id="*63" name="ΒοΔΟ Οικονομικά Μαθηματικά και Στατιστική" short="ΒοΔΟ ΟικΜαθ&amp;Στατ"/>
+      <subject id="*64" name="ΒοΔΟ Στοιχεία Δικαίου (Αστικού-Εμπορικού-Εργατικού)" short="ΒοΔΟ ΣτΔικ"/>
+      <subject id="*65" name="ΒοΔΟ Χρηματοπιστωτικές Συναλλαγές-Λογιστικά Φύλλα (ECXEL) " short="ΒοΔΟ ΧρημΣυνEXCEL"/>
+      <subject id="*66" name="ΒοΔΟ Χρηματοπιστωτικές Συναλλαγές-Λογιστικά Φύλλα (ECXEL) - Εργαστήριο" short="ΒοΔΟ ΕργΧρημΣυνEXCEL"/>
+      <subject id="*67" name="ΒοΔΟ Σύγχρονο Περιβάλλον Γραφείου" short="ΒοΔΟ ΣυγχΠερΓρ"/>
+      <subject id="*68" name="ΒοΔΟ Σύγχρονο Περιβάλλον Γραφείου - Εργαστήριο" short="ΒοΔΟ ΕργΣυγχΠερΓρ"/>
+      <subject id="*69" name="ΒοΕΔ Αγγλικά Ειδικότητας I" short="ΒοΕΔ ΑγγΕιδ"/>
+      <subject id="*70" name="ΒοΕΔ Διαφήμιση Επικοινωνία και Δημόσιες Σχέσεις" short="ΒοΕΔ Διαφήμ"/>
+      <subject id="*71" name="ΒοΕΔ Διαφήμιση Επικοινωνία και Δημόσιες Σχέσεις - Εργαστήριο" short="ΒοΕΔ ΕργΔιαφήμ"/>
+      <subject id="*72" name="ΒοΕΔ Εισαγωγή στο Marketing" short="ΒοΕΔ Marketing"/>
+      <subject id="*73" name="ΒοΕΔ Εισαγωγή στο Marketing - Εργαστήριο" short="ΒοΕΔ ΕργMarketing"/>
+      <subject id="*74" name="ΒοΕΔ Αρχές Λογιστικής ΙΙ" short="ΒοΕΔ ΑρχΛογΙΙ"/>
+      <subject id="*75" name="ΒοΕΔ Αρχές Λογιστικής ΙΙ - Εργαστήριο" short="ΒοΕΔ ΕργΑρχΛογΙΙ"/>
+      <subject id="*76" name="ΒοΕΔ Οικονομικά Μαθηματικά και Στατιστική" short="ΒοΕΔ ΟικΜαθ&amp;Στατ"/>
+      <subject id="*77" name="ΒοΕΔ Στοιχεία Δικαίου (Αστικού-Εμπορικού-Εργατικού)" short="ΒοΕΔ ΣτΔικ"/>
+      <subject id="*78" name="ΒοΣΕ Αγγλικά Ειδικότητας I" short="ΒοΣΕ ΑγγΕιδ"/>
+      <subject id="*79" name="ΒοΣΕ Εισαγωγή στην Εφοδιαστική (Logistics)" short="ΒοΣΕ Logistics"/>
+      <subject id="*80" name="ΒοΣΕ Εισαγωγή στην Εφοδιαστική (Logistics) - Εργαστήριο" short="ΒοΣΕ ΕργLogistics"/>
+      <subject id="*81" name="ΒοΣΕ Αρχές Λογιστικής ΙΙ" short="ΒοΣΕ ΑρχΛογΙΙ"/>
+      <subject id="*82" name="ΒοΣΕ Αρχές Λογιστικής ΙΙ - Εργαστήριο" short="ΒοΣΕ ΕργΑρχΛογΙΙ"/>
+      <subject id="*83" name="ΒοΣΕ Οικονομικά Μαθηματικά και Στατιστική" short="ΒοΣΕ ΟικΜαθ&amp;Στατ"/>
+      <subject id="*84" name="ΒοΣΕ Οργάνωση και Διαχείριση Αποθηκών" short="ΒοΣΕ ΔιαχΑποθ"/>
+      <subject id="*85" name="ΒοΣΕ Οργάνωση και Διαχείριση Αποθηκών - Εργαστήριο" short="ΒοΣΕ ΕργΔιαχΑποθ"/>
+      <subject id="*86" name="ΒοΣΕ Στοιχεία Δικαίου (Αστικού-Εμπορικού-Εργατικού)" short="ΒοΣΕ ΣτΔικ"/>
+      <subject id="*87" name="ΒοΤ Αγγλικά Ειδικότητας I" short="ΒοΤ ΑγγΕιδ"/>
+      <subject id="*88" name="ΒοΤ Γαλλικά" short="ΒοΤ Γαλλικά"/>
+      <subject id="*89" name="ΒοΤ Γερμανικά" short="ΒοΤ Γερμανικά"/>
+      <subject id="*90" name="ΒοΤ Εισαγωγή στον Τουρισμό" short="ΒοΤ ΕισΤουρ"/>
+      <subject id="*91" name="ΒοΤ Οργάνωση και Λειτουργία Ξενοδοχειακών και Τουριστικών Επιχειρήσεων" short="ΒοΤ ΞενΤουρΕπιχ"/>
+      <subject id="*92" name="ΒοΤ Οργάνωση και Λειτουργία Ξενοδοχειακών και Τουριστικών Επιχειρήσεων - Εργαστήριο" short="ΒοΤ ΕργΞενΤουρΕπιχ"/>
+      <subject id="*93" name="ΒοΤ Αρχές Λογιστικής ΙΙ" short="ΒοΤ ΑρχΛογΙΙ"/>
+      <subject id="*94" name="ΒοΤ Αρχές Λογιστικής ΙΙ - Εργαστήριο" short="ΒοΤ ΕργΑρχΛογΙΙ"/>
+      <subject id="*95" name="ΒοΤ Στοιχεία Δικαίου (Αστικού-Εμπορικού-Εργατικού-Τουριστικού)" short="ΒοΤ ΣτΔικ"/>
+      <subject id="*96" name="ΒπΔ Αρχές Προγραμματισμού Υπολογιστών" short="ΒπΔ Προγρ"/>
+      <subject id="*97" name="ΒπΔ Αρχές Προγραμματισμού Υπολογιστών - Εργαστήριο" short="ΒπΔ ΕργΠρογρ"/>
+      <subject id="*98" name="ΒπΔ Βασικά Θέματα Πληροφορικής" short="ΒπΔ ΒασΘΠλ"/>
+      <subject id="*99" name="ΒπΔ Βασικά Θέματα Πληροφορικής - Εργαστήριο" short="ΒπΔ ΕργΒασΘΠλ"/>
+      <subject id="*100" name="ΒπΔ Εγκατάσταση, Διαχείριση και Συντήρηση Υπολογιστικών Συστημάτων" short="ΒπΔ Συντήρηση"/>
+      <subject id="*101" name="ΒπΔ Εγκατάσταση, Διαχείριση και Συντήρηση Υπολογιστικών Συστημάτων - Εργαστήριο" short="ΒπΔ ΕργΣυντήρηση"/>
+      <subject id="*102" name="ΒπΔ Λειτουργικά Συστήματα και Ασφάλεια Πληροφοριακών Συστημάτων" short="ΒπΔ ΛειτΣυστ"/>
+      <subject id="*103" name="ΒπΔ Λειτουργικά Συστήματα και Ασφάλεια Πληροφοριακών Συστημάτων - Εργαστήριο" short="ΒπΔ ΕργΛειτΣυστ"/>
+      <subject id="*104" name="ΒπΔ Τεχνικά Θέματα Πωλήσεων και Προδιαγραφών Υλικού και Λογισμικού" short="ΒπΔ ΤεχΠωλ"/>
+      <subject id="*105" name="ΒπΔ Τεχνικά Θέματα Πωλήσεων και Προδιαγραφών Υλικού και Λογισμικού - Εργαστήριο" short="ΒπΔ ΕργΤεχΠωλ"/>
+      <subject id="*106" name="ΒπΔ Υλικό και Δίκτυα Υπολογιστών" short="ΒπΔ Δίκτυα"/>
+      <subject id="*107" name="ΒπΔ Υλικό και Δίκτυα Υπολογιστών - Εργαστήριο" short="ΒπΔ ΕργΔίκτυα"/>
+      <subject id="*108" name="ΒπΕΛ Αρχές Προγραμματισμού Υπολογιστών" short="ΒπΕΛ Προγρ"/>
+      <subject id="*109" name="ΒπΕΛ Αρχές Προγραμματισμού Υπολογιστών - Εργαστήριο" short="ΒπΕΛ ΕργΠρογρ"/>
+      <subject id="*110" name="ΒπΕΛ Συστήματα Διαχείρισης Βάσεων Δεδομένων και Εφαρμογές τους στο Διαδίκτυο" short="ΒπΕΛ ΒασΔεδ"/>
+      <subject id="*111" name="ΒπΕΛ Συστήματα Διαχείρισης Βάσεων Δεδομένων και Εφαρμογές τους στο Διαδίκτυο - Εργαστήριο" short="ΒπΕΛ ΕργΒασΔεδ"/>
+      <subject id="*112" name="ΒπΕΛ Βασικά Θέματα Πληροφορικής" short="ΒπΕΛ ΒασΘΠλ"/>
+      <subject id="*113" name="ΒπΕΛ Βασικά Θέματα Πληροφορικής - Εργαστήριο" short="ΒπΕΛ ΕργΒασΘΠλ"/>
+      <subject id="*114" name="ΒπΕΛ Λειτουργικά Συστήματα και Ασφάλεια Πληροφοριακών Συστημάτων" short="ΒπΕΛ ΛειτΣυστ"/>
+      <subject id="*115" name="ΒπΕΛ Λειτουργικά Συστήματα και Ασφάλεια Πληροφοριακών Συστημάτων - Εργαστήριο" short="ΒπΕΛ ΕργΛειτΣυστ"/>
+      <subject id="*116" name="ΒπΕΛ Σχεδιασμός και Ανάπτυξη Ιστοτόπων" short="ΒπΕΛ ΣχΙστοτ"/>
+      <subject id="*117" name="ΒπΕΛ Σχεδιασμός και Ανάπτυξη Ιστοτόπων - Εργαστήριο" short="ΒπΕΛ ΕργΣχΙστοτ"/>
+      <subject id="*118" name="ΒπΕΛ Υλικό και Δίκτυα Υπολογιστών" short="ΒπΕΛ Δίκτυα"/>
+      <subject id="*119" name="ΒπΕΛ Υλικό και Δίκτυα Υπολογιστών - Εργαστήριο" short="ΒπΕΛ ΕργΔίκτυα"/>
+      <subject id="*120" name="ΒπΕΠ Σχεδιασμός και Ανάπτυξη Ιστοτόπων" short="ΒπΕΠ ΣχΙστοτ"/>
+      <subject id="*121" name="ΒπΕΠ Σχεδιασμός και Ανάπτυξη Ιστοτόπων - Εργαστήριο" short="ΒπΕΠ ΕργΣχΙστοτ"/>
+      <subject id="*122" name="ΒπΕΠ Αρχές Προγραμματισμού Υπολογιστών" short="ΒπΕΠ Προγρ"/>
+      <subject id="*123" name="ΒπΕΠ Αρχές Προγραμματισμού Υπολογιστών - Εργαστήριο" short="ΒπΕΠ ΕργΠρογρ"/>
+      <subject id="*124" name="ΒπΕΠ Βασικά Θέματα Πληροφορικής" short="ΒπΕΠ ΒασΘΠλ"/>
+      <subject id="*125" name="ΒπΕΠ Βασικά Θέματα Πληροφορικής - Εργαστήριο" short="ΒπΕΠ ΕργΒασΘΠλ"/>
+      <subject id="*126" name="ΒπΕΠ Λειτουργικά Συστήματα και Ασφάλεια Πληροφοριακών Συστημάτων" short="ΒπΕΠ ΛειτΣυστ"/>
+      <subject id="*127" name="ΒπΕΠ Λειτουργικά Συστήματα και Ασφάλεια Πληροφοριακών Συστημάτων - Εργαστήριο" short="ΒπΕΠ ΕργΛειτΣυστ"/>
+      <subject id="*128" name="ΒπΕΠ Συστήματα Διαχείρισης Βάσεων Δεδομένων και Εφαρμογές τους στο Διαδίκτυο" short="ΒπΕΠ ΒασΔεδ"/>
+      <subject id="*129" name="ΒπΕΠ Συστήματα Διαχείρισης Βάσεων Δεδομένων και Εφαρμογές τους στο Διαδίκτυο - Εργαστήριο" short="ΒπΕΠ ΕργΒασΔεδ"/>
+      <subject id="*130" name="ΒπΕΠ Υλικό και Δίκτυα Υπολογιστών" short="ΒπΕΠ Δίκτυα"/>
+      <subject id="*131" name="ΒπΕΠ Υλικό και Δίκτυα Υπολογιστών - Εργαστήριο" short="ΒπΕΠ ΕργΔίκτυα"/>
+      <subject id="*132" name="ΒφΔΑ Αγγλικά Ειδικότητας I" short="ΒφΔΑ ΑγγΕιδ"/>
+      <subject id="*133" name="ΒφΔΑ Διαχείριση Αποβλήτων" short="ΒφΔΑ ΔιαχΑποβ"/>
+      <subject id="*134" name="ΒφΔΑ Διαχείριση Αποβλήτων - Εργαστήριο" short="ΒφΔΑ ΕργΔιαχΑποβ"/>
+      <subject id="*135" name="ΒφΔΑ Διαχείριση Επικίνδυνων Υλικών" short="ΒφΔΑ ΔιαχΕπΥλ"/>
+      <subject id="*136" name="ΒφΔΑ Περιβαλλοντική Νομοθεσία - Μελέτες Περιβαλλοντικών Επιπτώσεων" short="ΒφΔΑ ΠερΕπιπ"/>
+      <subject id="*137" name="ΒφΔΑ Τεχνολογία Αξιοποίησης Απορριμμάτων" short="ΒφΔΑ ΑξΑπορ"/>
+      <subject id="*138" name="ΒφΔΑ Τεχνολογίες Ανακύκλωσης Ι" short="ΒφΔΑ Ανακυκλ"/>
+      <subject id="*139" name="ΒφΔΑ Τεχνολογίες Ανακύκλωσης Ι - Εργαστήριο" short="ΒφΔΑ ΕργΑνακυκλ"/>
+      <subject id="*140" name="ΒφΡ Αγγλικά Ειδικότητας I" short="ΒφΡ ΑγγΕιδ"/>
+      <subject id="*141" name="ΒφΡ Κατασκευαστικές Τεχνολογίες" short="ΒφΡ ΚατΤεχν"/>
+      <subject id="*142" name="ΒφΡ Κατασκευαστικές Τεχνολογίες - Εργαστήριο" short="ΒφΡ ΕργΚατΤεχν"/>
+      <subject id="*143" name="ΒφΡ Περιβαλλοντική Νομοθεσία - Μελέτες Περιβαλλοντικών Επιπτώσεων" short="ΒφΡ ΠερΕπιπ"/>
+      <subject id="*144" name="ΒφΡ Συστήματα και Εγκαταστάσεις Αντιρρύπανσης" short="ΒφΡ Αντιρρυπ"/>
+      <subject id="*145" name="ΒφΡ Τεχνικές Προσδιορισμού Ρύπανσης" short="ΒφΡ ΤΠΡυπ"/>
+      <subject id="*146" name="ΒφΡ Τεχνικές Προσδιορισμού Ρύπανσης - Εργαστήριο" short="ΒφΡ ΕργΤΠΡυπ"/>
+      <subject id="*147" name="ΒφΡ Τεχνολογία και Διαχείριση Υγρών Αποβλήτων" short="ΒφΡ ΥγρΑποβ"/>
+      <subject id="*148" name="Γ Άλγεβρα" short="ΓΆλγεβρα"/>
+      <subject id="*149" name="Γ Γεωμετρία" short="ΓΓεωμ"/>
+      <subject id="*150" name="Γ Νεοελληνική Γλώσσα" short="ΓΓλωσ"/>
+      <subject id="*151" name="Γ Λογοτεχνία" short="ΓΛογοτ"/>
+      <subject id="*152" name="Γ Φυσική" short="ΓΦυσ"/>
+      <subject id="*153" name="Γ Χημεία" short="ΓΧημ"/>
+      <subject id="*154" name="Γ Εισαγωγή στις Αρχές της Επιστήμης των Η/Υ" short="ΓΕπιστΗ/Υ"/>
+      <subject id="*155" name="Γ Αγγλικά" short="ΓΑγγλ"/>
+      <subject id="*156" name="Γ Φυσική Αγωγή" short="ΓΓημν"/>
+      <subject id="*157" name="ΓηΑ Εργαστήριο Ηλεκτρονικών Συστημάτων - Εργαστήριο" short="ΓηΑ ΕργΗλΣυστ"/>
+      <subject id="*158" name="ΓηΑ Ηλεκτρονικά Ισχύος" short="ΓηΑ ΗλΙσχ"/>
+      <subject id="*159" name="ΓηΑ Ηλεκτρονικά Ισχύος - Εργαστήριο" short="ΓηΑ ΕργΗλΙσχ"/>
+      <subject id="*160" name="ΓηΑ Ηλεκτροτεχνία" short="ΓηΑ Ηλεκτροτεχνία"/>
+      <subject id="*161" name="ΓηΑ Μηχατρονική" short="ΓηΑ Μηχατρον"/>
+      <subject id="*162" name="ΓηΑ Μηχατρονική - Εργαστήριο" short="ΓηΑ ΕργΜηχατρον"/>
+      <subject id="*163" name="ΓηΑ Συστήματα Αυτομάτου Ελέγχου-Προγραμματιζόμενοι ελεγκτές" short="ΓηΑ ΣΑΕ"/>
+      <subject id="*164" name="ΓηΑ Συστήματα Αυτομάτου Ελέγχου-Προγραμματιζόμενοι ελεγκτές - Εργαστήριο" short="ΓηΑ ΕργΣΑΕ"/>
+      <subject id="*165" name="ΓηΑ Ψηφιακά Συστήματα" short="ΓηΑ ΨηφΣυστ"/>
+      <subject id="*166" name="ΓηΔΤ Τεχνολογία Δικτύων και Επικοινωνιών" short="ΓηΔΤ ΤεχνΔικτΕπικ"/>
+      <subject id="*167" name="ΓηΔΤ Διαχείριση και Εγκατάσταση Δικτύων - Εργαστήριο" short="ΓηΔΤ ΕργΔιαχΔικτ"/>
+      <subject id="*168" name="ΓηΔΤ Εργαστήριο Ηλεκτρονικών Συστημάτων - Εργαστήριο" short="ΓηΔΤ ΕργΗλΣυστ"/>
+      <subject id="*169" name="ΓηΔΤ Συστήματα Ελέγχου και Ασφάλειας" short="ΓηΔΤ ΣΑΕ"/>
+      <subject id="*170" name="ΓηΔΤ Συστήματα Ελέγχου και Ασφάλειας - Εργαστήριο" short="ΓηΔΤ ΕργΣΑΕ"/>
+      <subject id="*171" name="ΓηΔΤ Τηλεπικοινωνιακά Συστήματα -Εφαρμογές Τηλεματικής" short="ΓηΔΤ Τηλεματικ"/>
+      <subject id="*172" name="ΓηΔΤ Τηλεπικοινωνιακά Συστήματα -Εφαρμογές Τηλεματικής - Εργαστήριο" short="ΓηΔΤ ΕργΤηλεματικ"/>
+      <subject id="*173" name="ΓηΔΤ Ψηφιακά Συστήματα" short="ΓηΔΤ ΨηφΣυστ"/>
+      <subject id="*174" name="ΓηΥΣ Διαχείριση και Εγκατάσταση και Συντήρηση Ηλεκτρονικών Συστημάτων και Δικτύων Συστημάτων" short="ΓηΥΣ ΔιαχΗΣΔ"/>
+      <subject id="*175" name="ΓηΥΣ Διαχείριση και Εγκατάσταση και Συντήρηση Ηλεκτρονικών Συστημάτων και Δικτύων Συστημάτων - Εργαστήριο" short="ΓηΥΣ ΕργΔιαχΗΣΔ"/>
+      <subject id="*176" name="ΓηΥΣ Τεχνολογία Δικτύων και Επικοινωνιών" short="ΓηΥΣ ΤεχνΔικτΕπικ"/>
+      <subject id="*177" name="ΓηΥΣ Δίκτυα υπολογιστικών συστημάτων - Εργαστήριο" short="ΓηΥΣ ΕργΔίκτυα"/>
+      <subject id="*178" name="ΓηΥΣ Εργαστήριο Ηλεκτρονικών Συστημάτων - Εργαστήριο" short="ΓηΥΣ ΕργΗλΣυστ"/>
+      <subject id="*179" name="ΓηΥΣ Ηλεκτρονικές Μετρήσεις και Συστήματα Ασφάλειας" short="ΓηΥΣ ΗΜΣΑ"/>
+      <subject id="*180" name="ΓηΥΣ Ηλεκτρονικές Μετρήσεις και Συστήματα Ασφάλειας - Εργαστήριο" short="ΓηΥΣ ΕργΗΜΣΑ"/>
+      <subject id="*181" name="ΓηΥΣ Ψηφιακά Συστήματα" short="ΓηΥΣ ΨηφΣυστ"/>
+      <subject id="*182" name="ΓοΔΟ Αγγλικά Ειδικότητας II" short="ΓοΔΟ ΑγγΕιδΙ"/>
+      <subject id="*183" name="ΓοΔΟ Αρχές Οικονομικής Θεωρίας" short="ΓοΔΟ ΑρχΟικΘεω"/>
+      <subject id="*184" name="ΓοΔΟ Επικοινωνία και Δημόσιες Σχέσεις" short="ΓοΔΟ ΔημΣχ"/>
+      <subject id="*185" name="ΓοΔΟ Αρχές Οργάνωσης και Διοίκησης" short="ΓοΔΟ ΑρχΟργΔιοικ"/>
+      <subject id="*186" name="ΓοΔΟ Λογιστικές Εφαρμογές - Εργαστήριο" short="ΓοΔΟ ΕργΛογΕφ"/>
+      <subject id="*187" name="ΓοΔΟ Φορολογική Πρακτική" short="ΓοΔΟ ΦορΠρακτ"/>
+      <subject id="*188" name="ΓοΔΟ Φορολογική Πρακτική - Εργαστήριο" short="ΓοΔΟ ΕργΦορΠρακτ"/>
+      <subject id="*189" name="ΓοΕΔ Αγγλικά Ειδικότητας II" short="ΓοΕΔ ΑγγΕιδ"/>
+      <subject id="*190" name="ΓοΕΔ Αρχές Οικονομικής Θεωρίας" short="ΓοΕΔ ΑρχΟικΘεω"/>
+      <subject id="*191" name="ΓοΕΔ Αρχές Οργάνωσης και Διοίκησης" short="ΓοΕΔ ΑρχΟργΔιοικ"/>
+      <subject id="*192" name="ΓοΕΔ Εφαρμογές Marketing" short="ΓοΕΔ Marketing"/>
+      <subject id="*193" name="ΓοΕΔ Εφαρμογές Marketing - Εργαστήριο" short="ΓοΕΔ ΕργMarketing"/>
+      <subject id="*194" name="ΓοΕΔ Δημιουργία και Προβολή της Διαφήμισης" short="ΓοΕΔ Διαφημ"/>
+      <subject id="*195" name="ΓοΕΔ Δημιουργία και Προβολή της Διαφήμισης - Εργαστήριο" short="ΓοΕΔ ΕργΔιαφημ"/>
+      <subject id="*196" name="ΓοΕΔ Λογιστικές Εφαρμογές" short="ΓοΕΔ ΛογΕφαρμ"/>
+      <subject id="*197" name="ΓοΣΕ Αγγλικά Ειδικότητας II" short="ΓοΣΕ ΑγγΕιδ"/>
+      <subject id="*198" name="ΓοΣΕ Αρχές Οικονομικής Θεωρίας" short="ΓοΣΕ ΑρχΟικΘεω"/>
+      <subject id="*199" name="ΓοΣΕ Αρχές Οργάνωσης και Διοίκησης" short="ΓοΣΕ ΑρχΟργΔιοικ"/>
+      <subject id="*200" name="ΓοΣΕ Εφαρμογές Εφοδιαστικής (Logistics)" short="ΓοΣΕ Logistics"/>
+      <subject id="*201" name="ΓοΣΕ Εφαρμογές Εφοδιαστικής (Logistics) - Εργαστήριο" short="ΓοΣΕ ΕργLogistics"/>
+      <subject id="*202" name="ΓοΣΕ Οργάνωση και Διαχείριση Μεταφορών" short="ΓοΣΕ Μεταφ"/>
+      <subject id="*203" name="ΓοΣΕ Οργάνωση και Διαχείριση Μεταφορών - Εργαστήριο" short="ΓοΣΕ ΕργΜεταφ"/>
+      <subject id="*204" name="ΓοΣΕ Λογιστικές Εφαρμογές" short="ΓοΣΕ ΛογΕφαρμ"/>
+      <subject id="*205" name="ΓοΤ Αγγλικά Ειδικότητας II" short="ΓοΤ ΑγγΕιδ"/>
+      <subject id="*206" name="ΓοΤ Γαλλικά" short="ΓοΤ Γαλλικά"/>
+      <subject id="*207" name="ΓοΤ Γερμανικά" short="ΓοΤ Γερμανικά"/>
+      <subject id="*208" name="ΓοΤ Γεωγραφία Τουρισμού" short="ΓοΤ Γεωγραφία"/>
+      <subject id="*209" name="ΓοΤ Αρχές Οικονομικής Θεωρίας" short="ΓοΤ ΑρχΟικΘεω"/>
+      <subject id="*210" name="ΓοΤ Εφαρμογές στον Τουρισμό - Εργαστήριο" short="ΓοΤ ΕργΗθική"/>
+      <subject id="*211" name="ΓοΤ Αρχές Οργάνωσης και Διοίκησης" short="ΓοΤ ΑρχΟργΔιοικ"/>
+      <subject id="*212" name="ΓπΔ Αγγλικά Ειδικότητας" short="ΓπΔ ΑγγΕιδ"/>
+      <subject id="*213" name="ΓπΔ Δίκτυα Υπολογιστών" short="ΓπΔ Δίκτυα"/>
+      <subject id="*214" name="ΓπΔ Δίκτυα Υπολογιστών - Εργαστήριο" short="ΓπΔ ΕργΔίκτυα"/>
+      <subject id="*215" name="ΓπΔ Ειδικά Θέματα στο Υλικό και στα Δίκτυα Υπολογιστών" short="ΓπΔ ΕΘΥΔΥ"/>
+      <subject id="*216" name="ΓπΔ Ειδικά Θέματα στο Υλικό και στα Δίκτυα Υπολογιστών - Εργαστήριο" short="ΓπΔ ΕργΕΘΥΔΥ"/>
+      <subject id="*217" name="ΓπΔ Πληροφοριακά Συστήματα σε Επιχειρήσεις και Οργανισμούς" short="ΓπΔ ΠληΣυστ"/>
+      <subject id="*218" name="ΓπΔ Πληροφοριακά Συστήματα σε Επιχειρήσεις και Οργανισμούς - Εργαστήριο" short="ΓπΔ ΕργΠληΣυστ"/>
+      <subject id="*219" name="ΓπΔ Προγραμματισμός Υπολογιστών" short="ΓπΔ Προγρ"/>
+      <subject id="*220" name="ΓπΔ Προγραμματισμός Υπολογιστών - Εργαστήριο" short="ΓπΔ ΕργΠρογρ"/>
+      <subject id="*221" name="ΓπΔ Τεχνική Υποστήριξη  Υπολογιστικών Συστημάτων και Δικτυακών Υποδομών" short="ΓπΔ ΤΥΠΣκΔΥ"/>
+      <subject id="*222" name="ΓπΔ Τεχνική Υποστήριξη  Υπολογιστικών Συστημάτων και Δικτυακών Υποδομών - Εργαστήριο" short="ΓπΔ ΕργΤΥΠΣκΔΥ"/>
+      <subject id="*223" name="ΓπΕΛ Αγγλικά Ειδικότητας" short="ΓπΕΛ ΑγγΕιδ"/>
+      <subject id="*224" name="ΓπΕΛ Σχεδιασμός και Ανάπτυξη Διαδικτυακών Εφαρμογών" short="ΓπΕΛ ΔιαδΕφ"/>
+      <subject id="*225" name="ΓπΕΛ Σχεδιασμός και Ανάπτυξη Διαδικτυακών Εφαρμογών - Εργαστήριο" short="ΓπΕΛ ΕργΔιαδΕφ"/>
+      <subject id="*226" name="ΓπΕΛ Δίκτυα Υπολογιστών" short="ΓπΕΛ Δίκτυα"/>
+      <subject id="*227" name="ΓπΕΛ Δίκτυα Υπολογιστών - Εργαστήριο" short="ΓπΕΛ ΕργΔίκτυα"/>
+      <subject id="*228" name="ΓπΕΛ Ειδικά Θέματα στον Προγραμματισμό Υπολογιστών" short="ΓπΕΛ ΕιδΘεμΠρογ"/>
+      <subject id="*229" name="ΓπΕΛ Ειδικά Θέματα στον Προγραμματισμό Υπολογιστών - Εργαστήριο" short="ΓπΕΛ ΕργΕιδΘεμΠρογ"/>
+      <subject id="*230" name="ΓπΕΛ Πληροφοριακά Συστήματα σε Επιχειρήσεις και Οργανισμούς" short="ΓπΕΛ ΠληΣυστ"/>
+      <subject id="*231" name="ΓπΕΛ Πληροφοριακά Συστήματα σε Επιχειρήσεις και Οργανισμούς - Εργαστήριο" short="ΓπΕΛ ΕργΠληΣυστ"/>
+      <subject id="*232" name="ΓπΕΛ Προγραμματισμός Υπολογιστών" short="ΓπΕΛ Προγρ"/>
+      <subject id="*233" name="ΓπΕΛ Προγραμματισμός Υπολογιστών - Εργαστήριο" short="ΓπΕΛ ΕργΠρογρ"/>
+      <subject id="*234" name="ΓπΕΠ Αγγλικά Ειδικότητας" short="ΓπΕΠ ΑγγΕιδ"/>
+      <subject id="*235" name="ΓπΕΠ Δίκτυα Υπολογιστών" short="ΓπΕΠ Δίκτυα"/>
+      <subject id="*236" name="ΓπΕΠ Δίκτυα Υπολογιστών - Εργαστήριο" short="ΓπΕΠ ΕργΔίκτυα"/>
+      <subject id="*237" name="ΓπΕΠ Ειδικά Θέματα στον Προγραμματισμό Υπολογιστών" short="ΓπΕΠ ΕΘΠρογ"/>
+      <subject id="*238" name="ΓπΕΠ Ειδικά Θέματα στον Προγραμματισμό Υπολογιστών - Εργαστήριο" short="ΓπΕΠ ΕργΕΘΠρογ"/>
+      <subject id="*239" name="ΓπΕΠ Σχεδιασμός και Ανάπτυξη Διαδικτυακών Εφαρμογών" short="ΓπΕΠ ΔιαδΕφ"/>
+      <subject id="*240" name="ΓπΕΠ Σχεδιασμός και Ανάπτυξη Διαδικτυακών Εφαρμογών - Εργαστήριο" short="ΓπΕΠ ΕργΔιαδΕφ"/>
+      <subject id="*241" name="ΓπΕΠ Πληροφοριακά Συστήματα σε Επιχειρήσεις και Οργανισμούς" short="ΓπΕΠ ΠληΣυστ"/>
+      <subject id="*242" name="ΓπΕΠ Πληροφοριακά Συστήματα σε Επιχειρήσεις και Οργανισμούς - Εργαστήριο" short="ΓπΕΠ ΕργΠληΣυστ"/>
+      <subject id="*243" name="ΓπΕΠ Προγραμματισμός Υπολογιστών" short="ΓπΕΠ Προγρ"/>
+      <subject id="*244" name="ΓπΕΠ Προγραμματισμός Υπολογιστών - Εργαστήριο" short="ΓπΕΠ ΕργΠρογρ"/>
+      <subject id="*245" name="ΓφΔΑ Αγγλικά Ειδικότητας II" short="ΓφΔΑ ΑγγΕιδ"/>
+      <subject id="*246" name="ΓφΔΑ Βιομηχανικά και Αγροτικά Απόβλητα" short="ΓφΔΑ ΒΑΑποβ"/>
+      <subject id="*247" name="ΓφΔΑ Βιομηχανικά και Αγροτικά Απόβλητα - Εργαστήριο" short="ΓφΔΑ ΕργΒΑΑποβ"/>
+      <subject id="*248" name="ΓφΔΑ Οικολογία και Αειφόρος Ανάπτυξη" short="ΓφΔΑ Οικολ"/>
+      <subject id="*249" name="ΓφΔΑ Περιβάλλον και Φυσικοί Πόροι" short="ΓφΔΑ Φπόροι"/>
+      <subject id="*250" name="ΓφΔΑ Συστήματα Μετρήσεων και Ελέγχου" short="ΓφΔΑ ΣΜΕ"/>
+      <subject id="*251" name="ΓφΔΑ Συστήματα Μετρήσεων και Ελέγχου - Εργαστήριο" short="ΓφΔΑ ΕργΣΜΕ"/>
+      <subject id="*252" name="ΓφΔΑ Τεχνολογίες Ανακύκλωσης ΙΙ" short="ΓφΔΑ Ανακύκλ"/>
+      <subject id="*253" name="ΓφΔΑ Τεχνολογίες Ανακύκλωσης ΙΙ - Εργαστήριο" short="ΓφΔΑ ΕργΑνακύκλ"/>
+      <subject id="*254" name="ΓφΡ Αγγλικά Ειδικότητας II" short="ΓφΡ ΑγγΕιδ"/>
+      <subject id="*255" name="ΓφΡ Αντιρρυπαντική Τεχνολογία" short="ΓφΡ Αντιρρυπ"/>
+      <subject id="*256" name="ΓφΡ Αντιρρυπαντική Τεχνολογία - Εργαστήριο" short="ΓφΡ ΕργΑντιρρυπ"/>
+      <subject id="*257" name="ΓφΡ Οικολογία και Αειφόρος Ανάπτυξη" short="ΓφΡ Οικολ"/>
+      <subject id="*258" name="ΓφΡ Περιβάλλον και Φυσικοί Πόροι" short="ΓφΡ ΦΠόροι"/>
+      <subject id="*259" name="ΓφΡ Συστήματα Λήψης Μετρήσεων και Ελέγχου" short="ΓφΡ ΣΛΜΕ"/>
+      <subject id="*260" name="ΓφΡ Συστήματα Λήψης Μετρήσεων και Ελέγχου - Εργαστήριο" short="ΓφΡ ΕργΣΛΜΕ"/>
+      <subject id="*261" name="ΓφΡ Τεχνικές Απορρύπανσης" short="ΓφΡ Απορρύπ"/>
+      <subject id="*262" name="ΓφΡ Τεχνικές Απορρύπανσης - Εργαστήριο" short="ΓφΡ ΕργΑπορρύπ"/>
+      <subject id="*263" name="Διάθεση" short="Διάθεση"/>
+      <subject id="*264" name="Συνάντηση Τομέα" short="ΣυνΤομ"/>
+      <subject id="*265" name="Υπέυθυνος Εργαστηρίου" short="ΥπΕργ"/>
+   </subjects>
+   <classrooms options="import:disable,canadd,canremove,canupdate,primarytt,silent" columns="id,name,short">
+      <classroom id="*1" name="12" short="12"/>
+      <classroom id="*2" name="13 Προβολών" short="13Προβ"/>
+      <classroom id="*3" name="21" short="21"/>
+      <classroom id="*4" name="22" short="22"/>
+      <classroom id="*5" name="23" short="23"/>
+      <classroom id="*6" name="24" short="24"/>
+      <classroom id="*7" name="25" short="25"/>
+      <classroom id="*8" name="26" short="26"/>
+      <classroom id="*9" name="27" short="27"/>
+      <classroom id="*10" name="28" short="28"/>
+      <classroom id="*11" name="29" short="29"/>
+      <classroom id="*12" name="36" short="36"/>
+      <classroom id="*13" name="37" short="37"/>
+      <classroom id="*14" name="Αγγλικών" short="Αγγλ"/>
+      <classroom id="*15" name="Ηλεκρονικών 1" short="Ηλ 1"/>
+      <classroom id="*16" name="Ηλεκρονικών 2" short="Ηλ 2"/>
+      <classroom id="*17" name="Ηλεκρονικών 3" short="Ηλ 3"/>
+      <classroom id="*18" name="Πληροφορικής 1" short="Πλ 1"/>
+      <classroom id="*19" name="Πληροφορικής 2" short="Πλ 2"/>
+      <classroom id="*20" name="Πληροφορικής 3" short="Πλ 3"/>
+      <classroom id="*21" name="Πληροφορικής 4" short="Πλ 4"/>
+      <classroom id="*22" name="Πληροφορικής Υλικου" short="Πλ Υ"/>
+      <classroom id="*23" name="Προαύλιο" short="Αυλή"/>
+      <classroom id="*24" name="Σχεδίου" short="Σχεδ"/>
+   </classrooms>
+   <groups options="import:disable,canadd,canremove,canupdate,primarytt,silent" columns="id,name,classid,entireclass">
+      <group id="*1" name="Όλο το τμήμα" classid="*1" entireclass="1"/>
+      <group id="*2" name="Α1" classid="*1" entireclass="0"/>
+      <group id="*3" name="Α2" classid="*1" entireclass="0"/>
+      <group id="*4" name="Α3" classid="*1" entireclass="0"/>
+      <group id="*5" name="Αοεε1" classid="*1" entireclass="0"/>
+      <group id="*6" name="Αοεε2" classid="*1" entireclass="0"/>
+      <group id="*7" name="Αοεε3" classid="*1" entireclass="0"/>
+      <group id="*8" name="Όλο το τμήμα" classid="*2" entireclass="1"/>
+      <group id="*9" name="Α1" classid="*2" entireclass="0"/>
+      <group id="*10" name="Α2" classid="*2" entireclass="0"/>
+      <group id="*11" name="Α3" classid="*2" entireclass="0"/>
+      <group id="*12" name="Αοεε1" classid="*2" entireclass="0"/>
+      <group id="*13" name="Αοεε2" classid="*2" entireclass="0"/>
+      <group id="*14" name="Αοεε3" classid="*2" entireclass="0"/>
+      <group id="*15" name="Όλο το τμήμα" classid="*3" entireclass="1"/>
+      <group id="*16" name="Α1" classid="*3" entireclass="0"/>
+      <group id="*17" name="Α2" classid="*3" entireclass="0"/>
+      <group id="*18" name="Α3" classid="*3" entireclass="0"/>
+      <group id="*19" name="Ατεε1" classid="*3" entireclass="0"/>
+      <group id="*20" name="Ατεε2" classid="*3" entireclass="0"/>
+      <group id="*21" name="Ατεε3" classid="*3" entireclass="0"/>
+      <group id="*22" name="Όλο το τμήμα" classid="*4" entireclass="1"/>
+      <group id="*23" name="Α1" classid="*4" entireclass="0"/>
+      <group id="*24" name="Α2" classid="*4" entireclass="0"/>
+      <group id="*25" name="Α3" classid="*4" entireclass="0"/>
+      <group id="*26" name="Ατεε1" classid="*4" entireclass="0"/>
+      <group id="*27" name="Ατεε2" classid="*4" entireclass="0"/>
+      <group id="*28" name="Ατεε3" classid="*4" entireclass="0"/>
+      <group id="*29" name="Όλο το τμήμα" classid="*5" entireclass="1"/>
+      <group id="*30" name="Β1" classid="*5" entireclass="0"/>
+      <group id="*31" name="Β2" classid="*5" entireclass="0"/>
+      <group id="*32" name="Β3" classid="*5" entireclass="0"/>
+      <group id="*33" name="Β4" classid="*5" entireclass="0"/>
+      <group id="*34" name="Όλο το τμήμα" classid="*6" entireclass="1"/>
+      <group id="*35" name="Β1" classid="*6" entireclass="0"/>
+      <group id="*36" name="Β2" classid="*6" entireclass="0"/>
+      <group id="*37" name="Β3" classid="*6" entireclass="0"/>
+      <group id="*38" name="Β4" classid="*6" entireclass="0"/>
+      <group id="*39" name="Όλο το τμήμα" classid="*7" entireclass="1"/>
+      <group id="*40" name="Β1" classid="*7" entireclass="0"/>
+      <group id="*41" name="Β2" classid="*7" entireclass="0"/>
+      <group id="*42" name="Β3" classid="*7" entireclass="0"/>
+      <group id="*43" name="Β4" classid="*7" entireclass="0"/>
+      <group id="*44" name="Όλο το τμήμα" classid="*8" entireclass="1"/>
+      <group id="*45" name="Β1" classid="*8" entireclass="0"/>
+      <group id="*46" name="Β2" classid="*8" entireclass="0"/>
+      <group id="*47" name="Β3" classid="*8" entireclass="0"/>
+      <group id="*48" name="Β4" classid="*8" entireclass="0"/>
+      <group id="*49" name="Όλο το τμήμα" classid="*9" entireclass="1"/>
+      <group id="*50" name="Β1" classid="*9" entireclass="0"/>
+      <group id="*51" name="Β2" classid="*9" entireclass="0"/>
+      <group id="*52" name="Β3" classid="*9" entireclass="0"/>
+      <group id="*53" name="Β4" classid="*9" entireclass="0"/>
+      <group id="*54" name="Όλο το τμήμα" classid="*10" entireclass="1"/>
+      <group id="*55" name="Β1" classid="*10" entireclass="0"/>
+      <group id="*56" name="Β2" classid="*10" entireclass="0"/>
+      <group id="*57" name="Β3" classid="*10" entireclass="0"/>
+      <group id="*58" name="Β4" classid="*10" entireclass="0"/>
+      <group id="*59" name="Όλο το τμήμα" classid="*11" entireclass="1"/>
+      <group id="*60" name="Β1" classid="*11" entireclass="0"/>
+      <group id="*61" name="Β2" classid="*11" entireclass="0"/>
+      <group id="*62" name="Β3" classid="*11" entireclass="0"/>
+      <group id="*63" name="Β4" classid="*11" entireclass="0"/>
+      <group id="*64" name="Όλο το τμήμα" classid="*12" entireclass="1"/>
+      <group id="*65" name="Γ1Α" classid="*12" entireclass="0"/>
+      <group id="*66" name="Γ2Α" classid="*12" entireclass="0"/>
+      <group id="*67" name="Γ3Α" classid="*12" entireclass="0"/>
+      <group id="*68" name="Όλο το τμήμα" classid="*13" entireclass="1"/>
+      <group id="*69" name="Γ1Α" classid="*13" entireclass="0"/>
+      <group id="*70" name="Γ2Α" classid="*13" entireclass="0"/>
+      <group id="*71" name="Γ3Α" classid="*13" entireclass="0"/>
+      <group id="*72" name="Όλο το τμήμα" classid="*14" entireclass="1"/>
+      <group id="*73" name="Γ1Α" classid="*14" entireclass="0"/>
+      <group id="*74" name="Γ2Α" classid="*14" entireclass="0"/>
+      <group id="*75" name="Γ3Α" classid="*14" entireclass="0"/>
+      <group id="*76" name="Όλο το τμήμα" classid="*15" entireclass="1"/>
+      <group id="*77" name="Γ1Α" classid="*15" entireclass="0"/>
+      <group id="*78" name="Γ2Α" classid="*15" entireclass="0"/>
+      <group id="*79" name="Γ3Α" classid="*15" entireclass="0"/>
+      <group id="*80" name="Όλο το τμήμα" classid="*16" entireclass="1"/>
+      <group id="*81" name="Γ1Α" classid="*16" entireclass="0"/>
+      <group id="*82" name="Γ2Α" classid="*16" entireclass="0"/>
+      <group id="*83" name="Γ3Α" classid="*16" entireclass="0"/>
+      <group id="*84" name="Όλο το τμήμα" classid="*17" entireclass="1"/>
+      <group id="*85" name="Γ1Α" classid="*17" entireclass="0"/>
+      <group id="*86" name="Γ2Α" classid="*17" entireclass="0"/>
+      <group id="*87" name="Γ3Α" classid="*17" entireclass="0"/>
+   </groups>
+   <cards options="import:disable,canadd,canremove,canupdate,primarytt,silent" columns="day,period,classids,groupids,subjectid,teacherids,classroomid">
+      <card classids="*1,*2,*3,*4" subjectid="*4" teacherids="*1" classroomid="*11" groupids="*2,*9,*16,*23" day="1" period="6"/>
+      <card classids="*1,*2,*3,*4" subjectid="*4" teacherids="*1" classroomid="*13" groupids="*4,*11,*18,*25" day="3" period="7"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*26" teacherids="*1" classroomid="*3" groupids="*30,*35,*40,*45,*50,*55,*60" day="1" period="4"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*26" teacherids="*1" classroomid="*4" groupids="*31,*36,*41,*46,*51,*56,*61" day="3" period="3"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*26" teacherids="*1" classroomid="*5" groupids="*32,*37,*42,*47,*52,*57,*62" day="3" period="1"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*26" teacherids="*1" classroomid="*6" groupids="*33,*38,*43,*48,*53,*58,*63" day="3" period="2"/>
+      <card classids="*1,*2,*3,*4" subjectid="*9" teacherids="*6" classroomid="*11" groupids="*2,*9,*16,*23" day="3" period="6"/>
+      <card classids="*1,*2,*3,*4" subjectid="*9" teacherids="*6" classroomid="*11" groupids="*2,*9,*16,*23" day="4" period="4"/>
+      <card classids="*1,*2,*3,*4" subjectid="*9" teacherids="*6" classroomid="*13" groupids="*4,*11,*18,*25" day="2" period="4"/>
+      <card classids="*1,*2,*3,*4" subjectid="*9" teacherids="*6" classroomid="*13" groupids="*4,*11,*18,*25" day="4" period="1"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*29" teacherids="*6" classroomid="*3" groupids="*30,*35,*40,*45,*50,*55,*60" day="1" period="5"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*29" teacherids="*6" classroomid="*4" groupids="*31,*36,*41,*46,*51,*56,*61" day="2" period="7"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*29" teacherids="*6" classroomid="*5" groupids="*32,*37,*42,*47,*52,*57,*62" day="1" period="4"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*29" teacherids="*6" classroomid="*6" groupids="*33,*38,*43,*48,*53,*58,*63" day="2" period="5"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*152" teacherids="*6" classroomid="*7" groupids="*65,*69,*73,*77,*81,*85" day="0" period="2"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*152" teacherids="*6" classroomid="*7" groupids="*65,*69,*73,*77,*81,*85" day="1" period="3"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*152" teacherids="*6" classroomid="*9" groupids="*67,*71,*75,*79,*83,*87" day="3" period="5"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*152" teacherids="*6" classroomid="*9" groupids="*67,*71,*75,*79,*83,*87" day="4" period="3"/>
+      <card classids="*1,*2,*3,*4" subjectid="*2" teacherids="*5" classroomid="*11" groupids="*2,*9,*16,*23" day="4" period="7"/>
+      <card classids="*1,*2,*3,*4" subjectid="*2" teacherids="*5" classroomid="*11" groupids="*2,*9,*16,*23" day="0" period="2"/>
+      <card classids="*1,*2,*3,*4" subjectid="*2" teacherids="*5" classroomid="*11" groupids="*2,*9,*16,*23" day="1" period="7"/>
+      <card classids="*1,*2,*3,*4" subjectid="*2" teacherids="*4" classroomid="*13" groupids="*4,*11,*18,*25" day="2" period="7"/>
+      <card classids="*1,*2,*3,*4" subjectid="*2" teacherids="*4" classroomid="*13" groupids="*4,*11,*18,*25" day="4" period="4"/>
+      <card classids="*1,*2,*3,*4" subjectid="*2" teacherids="*4" classroomid="*13" groupids="*4,*11,*18,*25" day="1" period="7"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*23" teacherids="*5" classroomid="*3" groupids="*30,*35,*40,*45,*50,*55,*60" day="2" period="5"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*23" teacherids="*5" classroomid="*3" groupids="*30,*35,*40,*45,*50,*55,*60" day="0" period="4"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*23" teacherids="*4" classroomid="*4" groupids="*31,*36,*41,*46,*51,*56,*61" day="3" period="2"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*23" teacherids="*4" classroomid="*4" groupids="*31,*36,*41,*46,*51,*56,*61" day="0" period="4"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*23" teacherids="*4" classroomid="*5" groupids="*32,*37,*42,*47,*52,*57,*62" day="1" period="5"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*23" teacherids="*4" classroomid="*5" groupids="*32,*37,*42,*47,*52,*57,*62" day="2" period="6"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*23" teacherids="*5" classroomid="*6" groupids="*33,*38,*43,*48,*53,*58,*63" day="2" period="6"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*23" teacherids="*5" classroomid="*6" groupids="*33,*38,*43,*48,*53,*58,*63" day="4" period="1"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*148" teacherids="*4" classroomid="*7" groupids="*65,*69,*73,*77,*81,*85" day="4" period="3"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*148" teacherids="*4" classroomid="*7" groupids="*65,*69,*73,*77,*81,*85" day="3" period="5"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*148" teacherids="*5" classroomid="*8" groupids="*66,*70,*74,*78,*82,*86" day="4" period="3"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*148" teacherids="*5" classroomid="*8" groupids="*66,*70,*74,*78,*82,*86" day="3" period="6"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*148" teacherids="*4" classroomid="*9" groupids="*67,*71,*75,*79,*83,*87" day="1" period="1"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*148" teacherids="*4" classroomid="*9" groupids="*67,*71,*75,*79,*83,*87" day="3" period="6"/>
+      <card classids="*1,*2,*3,*4" subjectid="*3" teacherids="*4" classroomid="*11" groupids="*2,*9,*16,*23" day="3" period="7"/>
+      <card classids="*1,*2,*3,*4" subjectid="*3" teacherids="*4" classroomid="*13" groupids="*4,*11,*18,*25" day="0" period="1"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*24" teacherids="*4" classroomid="*4" groupids="*31,*36,*41,*46,*51,*56,*61" day="4" period="1"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*24" teacherids="*4" classroomid="*5" groupids="*32,*37,*42,*47,*52,*57,*62" day="0" period="5"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*149" teacherids="*4" classroomid="*7" groupids="*65,*69,*73,*77,*81,*85" day="4" period="2"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*149" teacherids="*5" classroomid="*8" groupids="*66,*70,*74,*78,*82,*86" day="1" period="2"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*149" teacherids="*4" classroomid="*9" groupids="*67,*71,*75,*79,*83,*87" day="1" period="3"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*27" teacherids="*2" classroomid="*3" groupids="*30,*35,*40,*45,*50,*55,*60" day="0" period="5"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*27" teacherids="*2" classroomid="*5" groupids="*32,*37,*42,*47,*52,*57,*62" day="3" period="3"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*27" teacherids="*2" classroomid="*4" groupids="*31,*36,*41,*46,*51,*56,*61" day="2" period="6"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*151" teacherids="*2" classroomid="*7" groupids="*65,*69,*73,*77,*81,*85" day="1" period="2"/>
+      <card classids="*1,*2,*3,*4" subjectid="*7" teacherids="*3" classroomid="*13" groupids="*4,*11,*18,*25" day="4" period="6"/>
+      <card classids="*1,*2,*3,*4" subjectid="*7" teacherids="*3" classroomid="*13" groupids="*4,*11,*18,*25" day="2" period="2"/>
+      <card classids="*1,*2,*3,*4" subjectid="*7" teacherids="*3" classroomid="*13" groupids="*4,*11,*18,*25" day="1" period="1"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*28" teacherids="*3" classroomid="*3" groupids="*30,*35,*40,*45,*50,*55,*60" day="2" period="6"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*28" teacherids="*3" classroomid="*3" groupids="*30,*35,*40,*45,*50,*55,*60" day="3" period="3"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*28" teacherids="*3" classroomid="*4" groupids="*31,*36,*41,*46,*51,*56,*61" day="1" period="5"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*28" teacherids="*3" classroomid="*4" groupids="*31,*36,*41,*46,*51,*56,*61" day="0" period="5"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*28" teacherids="*3" classroomid="*5" groupids="*32,*37,*42,*47,*52,*57,*62" day="3" period="2"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*28" teacherids="*3" classroomid="*5" groupids="*32,*37,*42,*47,*52,*57,*62" day="0" period="4"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*28" teacherids="*3" classroomid="*6" groupids="*33,*38,*43,*48,*53,*58,*63" day="3" period="1"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*28" teacherids="*3" classroomid="*6" groupids="*33,*38,*43,*48,*53,*58,*63" day="2" period="4"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*151" teacherids="*3" classroomid="*8" groupids="*66,*70,*74,*78,*82,*86" day="0" period="2"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*151" teacherids="*3" classroomid="*9" groupids="*67,*71,*75,*79,*83,*87" day="0" period="1"/>
+      <card classids="*1,*2,*3,*4" subjectid="*7" teacherids="*2" classroomid="*11" groupids="*2,*9,*16,*23" day="4" period="6"/>
+      <card classids="*1,*2,*3,*4" subjectid="*7" teacherids="*2" classroomid="*11" groupids="*2,*9,*16,*23" day="2" period="4"/>
+      <card classids="*1,*2,*3,*4" subjectid="*7" teacherids="*2" classroomid="*11" groupids="*2,*9,*16,*23" day="0" period="3"/>
+      <card classids="*10" subjectid="*106" teacherids="*31" classroomid="*5" groupids="*54" day="1" period="7"/>
+      <card classids="*10" subjectid="*106" teacherids="*31" classroomid="*5" groupids="*54" day="2" period="3"/>
+      <card classids="*11" subjectid="*118" teacherids="*31" classroomid="*5" groupids="*59" day="1" period="3"/>
+      <card classids="*11" subjectid="*118" teacherids="*31" classroomid="*5" groupids="*59" day="3" period="5"/>
+      <card classids="*11" subjectid="*112" teacherids="*31" classroomid="*5" groupids="*59" day="4" period="2"/>
+      <card classids="*11" subjectid="*112" teacherids="*31" classroomid="*5" groupids="*59" day="3" period="4"/>
+      <card classids="*10" subjectid="*99" teacherids="*31" classroomid="*18" groupids="*54" day="0" period="6"/>
+      <card classids="*10" subjectid="*99" teacherids="*31" classroomid="*18" groupids="*54" day="0" period="7"/>
+      <card classids="*4" subjectid="*19" teacherids="*23" classroomid="*13" groupids="*22" day="1" period="3"/>
+      <card classids="*4" subjectid="*19" teacherids="*23" classroomid="*13" groupids="*22" day="1" period="2"/>
+      <card classids="*3" subjectid="*17" teacherids="*23" classroomid="*12" groupids="*15" day="1" period="4"/>
+      <card classids="*3" subjectid="*17" teacherids="*23" classroomid="*12" groupids="*15" day="3" period="1"/>
+      <card classids="*3" subjectid="*17" teacherids="*23" classroomid="*12" groupids="*15" day="3" period="2"/>
+      <card classids="*4" subjectid="*17" teacherids="*23" classroomid="*13" groupids="*22" day="4" period="3"/>
+      <card classids="*4" subjectid="*17" teacherids="*23" classroomid="*13" groupids="*22" day="4" period="2"/>
+      <card classids="*4" subjectid="*17" teacherids="*23" classroomid="*13" groupids="*22" day="3" period="3"/>
+      <card classids="*13" subjectid="*167" teacherids="*23" classroomid="*15" groupids="*68" day="2" period="5"/>
+      <card classids="*13" subjectid="*167" teacherids="*23" classroomid="*15" groupids="*68" day="2" period="6"/>
+      <card classids="*13" subjectid="*167" teacherids="*23" classroomid="*15" groupids="*68" day="2" period="7"/>
+      <card classids="*6" subjectid="*59" teacherids="*22" classroomid="*15" groupids="*34" day="2" period="1"/>
+      <card classids="*6" subjectid="*59" teacherids="*22" classroomid="*15" groupids="*34" day="2" period="2"/>
+      <card classids="*6" subjectid="*59" teacherids="*22" classroomid="*15" groupids="*34" day="2" period="3"/>
+      <card classids="*5" subjectid="*41" teacherids="*22" classroomid="*15" groupids="*29" day="0" period="1"/>
+      <card classids="*5" subjectid="*41" teacherids="*22" classroomid="*15" groupids="*29" day="0" period="2"/>
+      <card classids="*5" subjectid="*41" teacherids="*22" classroomid="*15" groupids="*29" day="0" period="3"/>
+      <card classids="*13" subjectid="*170" teacherids="*22" classroomid="*17" groupids="*68" day="3" period="1"/>
+      <card classids="*13" subjectid="*170" teacherids="*22" classroomid="*17" groupids="*68" day="3" period="2"/>
+      <card classids="*6" subjectid="*55" teacherids="*22" classroomid="*15" groupids="*34" day="1" period="1"/>
+      <card classids="*6" subjectid="*55" teacherids="*22" classroomid="*15" groupids="*34" day="1" period="2"/>
+      <card classids="*6" subjectid="*55" teacherids="*22" classroomid="*15" groupids="*34" day="1" period="3"/>
+      <card classids="*5" subjectid="*36" teacherids="*21" classroomid="*16" groupids="*29" day="4" period="2"/>
+      <card classids="*5" subjectid="*36" teacherids="*21" classroomid="*16" groupids="*29" day="4" period="3"/>
+      <card classids="*5" subjectid="*36" teacherids="*21" classroomid="*16" groupids="*29" day="4" period="4"/>
+      <card classids="*6" subjectid="*53" teacherids="*21" classroomid="*16" groupids="*34" day="3" period="5"/>
+      <card classids="*6" subjectid="*53" teacherids="*21" classroomid="*16" groupids="*34" day="3" period="6"/>
+      <card classids="*6" subjectid="*53" teacherids="*21" classroomid="*16" groupids="*34" day="3" period="7"/>
+      <card classids="*9" subjectid="*90" teacherids="*15" classroomid="*3" groupids="*49" day="0" period="1"/>
+      <card classids="*9" subjectid="*90" teacherids="*15" classroomid="*3" groupids="*49" day="4" period="3"/>
+      <card classids="*9" subjectid="*90" teacherids="*15" classroomid="*3" groupids="*49" day="1" period="1"/>
+      <card classids="*9" subjectid="*91" teacherids="*15" classroomid="*3" groupids="*49" day="3" period="5"/>
+      <card classids="*9" subjectid="*91" teacherids="*15" classroomid="*3" groupids="*49" day="1" period="2"/>
+      <card classids="*9" subjectid="*91" teacherids="*15" classroomid="*3" groupids="*49" day="0" period="3"/>
+      <card classids="*9" subjectid="*92" teacherids="*15" classroomid="*3" groupids="*49" day="4" period="2"/>
+      <card classids="*9" subjectid="*92" teacherids="*15" classroomid="*3" groupids="*49" day="3" period="6"/>
+      <card classids="*9" subjectid="*92" teacherids="*15" classroomid="*3" groupids="*49" day="0" period="2"/>
+      <card classids="*9" subjectid="*92" teacherids="*15" classroomid="*3" groupids="*49" day="2" period="3"/>
+      <card classids="*14" subjectid="*185" teacherids="*12" classroomid="*7" groupids="*72" day="4" period="4"/>
+      <card classids="*14" subjectid="*185" teacherids="*12" classroomid="*7" groupids="*72" day="2" period="4"/>
+      <card classids="*14" subjectid="*185" teacherids="*12" classroomid="*7" groupids="*72" day="0" period="3"/>
+      <card classids="*14" subjectid="*185" teacherids="*12" classroomid="*7" groupids="*72" day="3" period="2"/>
+      <card classids="*15" subjectid="*211" teacherids="*12" classroomid="*8" groupids="*76" day="1" period="6"/>
+      <card classids="*15" subjectid="*211" teacherids="*12" classroomid="*8" groupids="*76" day="3" period="3"/>
+      <card classids="*15" subjectid="*211" teacherids="*12" classroomid="*8" groupids="*76" day="0" period="6"/>
+      <card classids="*15" subjectid="*211" teacherids="*12" classroomid="*8" groupids="*76" day="4" period="6"/>
+      <card classids="*7" subjectid="*61" teacherids="*12" classroomid="*4" groupids="*39" day="1" period="1"/>
+      <card classids="*7" subjectid="*61" teacherids="*12" classroomid="*4" groupids="*39" day="4" period="5"/>
+      <card classids="*1" subjectid="*14" teacherids="*12" classroomid="*11" groupids="*1" day="0" period="5"/>
+      <card classids="*1" subjectid="*14" teacherids="*12" classroomid="*11" groupids="*1" day="1" period="5"/>
+      <card classids="*1" subjectid="*14" teacherids="*12" classroomid="*11" groupids="*1" day="1" period="4"/>
+      <card classids="*1" subjectid="*14" teacherids="*12" classroomid="*11" groupids="*1" day="3" period="1"/>
+      <card classids="*2" subjectid="*14" teacherids="*12" classroomid="*1" groupids="*8" day="2" period="6"/>
+      <card classids="*2" subjectid="*14" teacherids="*12" classroomid="*1" groupids="*8" day="4" period="2"/>
+      <card classids="*2" subjectid="*14" teacherids="*12" classroomid="*1" groupids="*8" day="2" period="5"/>
+      <card classids="*2" subjectid="*14" teacherids="*12" classroomid="*1" groupids="*8" day="0" period="4"/>
+      <card classids="*14" subjectid="*183" teacherids="*13" classroomid="*7" groupids="*72" day="2" period="5"/>
+      <card classids="*14" subjectid="*183" teacherids="*13" classroomid="*7" groupids="*72" day="2" period="6"/>
+      <card classids="*14" subjectid="*183" teacherids="*13" classroomid="*7" groupids="*72" day="1" period="4"/>
+      <card classids="*14" subjectid="*183" teacherids="*13" classroomid="*7" groupids="*72" day="1" period="5"/>
+      <card classids="*15" subjectid="*209" teacherids="*13" classroomid="*8" groupids="*76" day="3" period="1"/>
+      <card classids="*15" subjectid="*209" teacherids="*13" classroomid="*8" groupids="*76" day="3" period="2"/>
+      <card classids="*15" subjectid="*209" teacherids="*13" classroomid="*8" groupids="*76" day="2" period="1"/>
+      <card classids="*15" subjectid="*209" teacherids="*13" classroomid="*8" groupids="*76" day="2" period="2"/>
+      <card classids="*14" subjectid="*187" teacherids="*13" classroomid="*7" groupids="*72" day="2" period="7"/>
+      <card classids="*14" subjectid="*187" teacherids="*13" classroomid="*7" groupids="*72" day="1" period="7"/>
+      <card classids="*14" subjectid="*188" teacherids="*13" classroomid="*7" groupids="*72" day="4" period="5"/>
+      <card classids="*14" subjectid="*188" teacherids="*13" classroomid="*7" groupids="*72" day="4" period="6"/>
+      <card classids="*14" subjectid="*188" teacherids="*13" classroomid="*7" groupids="*72" day="0" period="4"/>
+      <card classids="*14" subjectid="*188" teacherids="*13" classroomid="*7" groupids="*72" day="0" period="5"/>
+      <card classids="*7" subjectid="*65" teacherids="*13" classroomid="*4" groupids="*39" day="0" period="3"/>
+      <card classids="*7" subjectid="*65" teacherids="*13" classroomid="*4" groupids="*39" day="4" period="4"/>
+      <card classids="*7" subjectid="*66" teacherids="*13" classroomid="*19" groupids="*39" day="0" period="6"/>
+      <card classids="*7" subjectid="*66" teacherids="*13" classroomid="*19" groupids="*39" day="0" period="7"/>
+      <card classids="*14" subjectid="*186" teacherids="*15,*14" classroomid="*7" groupids="*72" day="2" period="1"/>
+      <card classids="*14" subjectid="*186" teacherids="*15,*14" classroomid="*7" groupids="*72" day="2" period="2"/>
+      <card classids="*14" subjectid="*186" teacherids="*15,*14" classroomid="*7" groupids="*72" day="0" period="6"/>
+      <card classids="*14" subjectid="*186" teacherids="*15,*14" classroomid="*7" groupids="*72" day="0" period="7"/>
+      <card classids="*1" subjectid="*13" teacherids="*14" classroomid="*11" groupids="*1" day="2" period="5"/>
+      <card classids="*1" subjectid="*13" teacherids="*14" classroomid="*11" groupids="*1" day="0" period="4"/>
+      <card classids="*1" subjectid="*13" teacherids="*14" classroomid="*11" groupids="*1" day="2" period="6"/>
+      <card classids="*2" subjectid="*13" teacherids="*14" classroomid="*1" groupids="*8" day="4" period="3"/>
+      <card classids="*2" subjectid="*13" teacherids="*14" classroomid="*1" groupids="*8" day="0" period="5"/>
+      <card classids="*2" subjectid="*13" teacherids="*14" classroomid="*1" groupids="*8" day="3" period="1"/>
+      <card classids="*1" subjectid="*15" teacherids="*14" classroomid="*11" groupids="*1" day="3" period="5"/>
+      <card classids="*1" subjectid="*15" teacherids="*14" classroomid="*11" groupids="*1" day="3" period="4"/>
+      <card classids="*2" subjectid="*15" teacherids="*14" classroomid="*1" groupids="*8" day="3" period="2"/>
+      <card classids="*2" subjectid="*15" teacherids="*14" classroomid="*1" groupids="*8" day="3" period="3"/>
+      <card classids="*8" subjectid="*75" teacherids="*14" classroomid="*6" groupids="*44" day="4" period="5"/>
+      <card classids="*8" subjectid="*75" teacherids="*14" classroomid="*6" groupids="*44" day="4" period="6"/>
+      <card classids="*8" subjectid="*74" teacherids="*14" classroomid="*6" groupids="*44" day="1" period="6"/>
+      <card classids="*8" subjectid="*74" teacherids="*14" classroomid="*6" groupids="*44" day="1" period="7"/>
+      <card classids="*7" subjectid="*64" teacherids="*16" classroomid="*4" groupids="*39" day="4" period="6"/>
+      <card classids="*7" subjectid="*64" teacherids="*16" classroomid="*4" groupids="*39" day="0" period="1"/>
+      <card classids="*7" subjectid="*64" teacherids="*16" classroomid="*4" groupids="*39" day="3" period="7"/>
+      <card classids="*7" subjectid="*64" teacherids="*16" classroomid="*4" groupids="*39" day="0" period="2"/>
+      <card classids="*8" subjectid="*77" teacherids="*16" classroomid="*6" groupids="*44" day="3" period="6"/>
+      <card classids="*8" subjectid="*77" teacherids="*16" classroomid="*6" groupids="*44" day="0" period="3"/>
+      <card classids="*8" subjectid="*77" teacherids="*16" classroomid="*6" groupids="*44" day="1" period="2"/>
+      <card classids="*8" subjectid="*77" teacherids="*16" classroomid="*6" groupids="*44" day="3" period="5"/>
+      <card classids="*9" subjectid="*95" teacherids="*16" classroomid="*3" groupids="*49" day="4" period="4"/>
+      <card classids="*9" subjectid="*95" teacherids="*16" classroomid="*3" groupids="*49" day="3" period="4"/>
+      <card classids="*9" subjectid="*95" teacherids="*16" classroomid="*3" groupids="*49" day="4" period="5"/>
+      <card classids="*9" subjectid="*95" teacherids="*16" classroomid="*3" groupids="*49" day="2" period="1"/>
+      <card classids="*9" subjectid="*95" teacherids="*16" classroomid="*3" groupids="*49" day="2" period="2"/>
+      <card classids="*1,*2,*3,*4" subjectid="*1" teacherids="*9" classroomid="*2" groupids="*2,*9,*16,*23" day="2" period="1"/>
+      <card classids="*1,*2,*3,*4" subjectid="*1" teacherids="*9" classroomid="*2" groupids="*2,*9,*16,*23" day="0" period="7"/>
+      <card classids="*1,*2,*3,*4" subjectid="*1" teacherids="*9" classroomid="*2" groupids="*3,*10,*17,*24" day="4" period="6"/>
+      <card classids="*1,*2,*3,*4" subjectid="*1" teacherids="*9" classroomid="*2" groupids="*3,*10,*17,*24" day="1" period="7"/>
+      <card classids="*1,*2,*3,*4" subjectid="*1" teacherids="*9" classroomid="*2" groupids="*4,*11,*18,*25" day="0" period="2"/>
+      <card classids="*1,*2,*3,*4" subjectid="*1" teacherids="*9" classroomid="*2" groupids="*4,*11,*18,*25" day="4" period="7"/>
+      <card classids="*14" subjectid="*184" teacherids="*16" classroomid="*7" groupids="*72" day="2" period="3"/>
+      <card classids="*14" subjectid="*184" teacherids="*16" classroomid="*7" groupids="*72" day="3" period="1"/>
+      <card classids="*14" subjectid="*184" teacherids="*16" classroomid="*7" groupids="*72" day="4" period="7"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*22" teacherids="*10" classroomid="*14" groupids="*31,*36,*41,*46,*51,*56,*61" day="2" period="4"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*22" teacherids="*10" classroomid="*14" groupids="*32,*37,*42,*47,*52,*57,*62" day="4" period="1"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*22" teacherids="*10" classroomid="*14" groupids="*33,*38,*43,*48,*53,*58,*63" day="1" period="5"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*22" teacherids="*10" classroomid="*14" groupids="*30,*35,*40,*45,*50,*55,*60" day="2" period="7"/>
+      <card classids="*5" subjectid="*32" teacherids="*10" classroomid="*14" groupids="*29" day="0" period="6"/>
+      <card classids="*5" subjectid="*32" teacherids="*10" classroomid="*14" groupids="*29" day="2" period="1"/>
+      <card classids="*6" subjectid="*51" teacherids="*10" classroomid="*14" groupids="*34" day="1" period="7"/>
+      <card classids="*6" subjectid="*51" teacherids="*10" classroomid="*14" groupids="*34" day="4" period="4"/>
+      <card classids="*7" subjectid="*60" teacherids="*10" classroomid="*14" groupids="*39" day="4" period="3"/>
+      <card classids="*7" subjectid="*60" teacherids="*10" classroomid="*14" groupids="*39" day="2" period="2"/>
+      <card classids="*8" subjectid="*69" teacherids="*10" classroomid="*14" groupids="*44" day="3" period="4"/>
+      <card classids="*8" subjectid="*69" teacherids="*10" classroomid="*14" groupids="*44" day="4" period="2"/>
+      <card classids="*9" subjectid="*87" teacherids="*10" classroomid="*14" groupids="*49" day="1" period="3"/>
+      <card classids="*9" subjectid="*87" teacherids="*10" classroomid="*14" groupids="*49" day="4" period="6"/>
+      <card classids="*14" subjectid="*182" teacherids="*10" classroomid="*14" groupids="*72" day="3" period="3"/>
+      <card classids="*14" subjectid="*182" teacherids="*10" classroomid="*14" groupids="*72" day="1" period="6"/>
+      <card classids="*15" subjectid="*205" teacherids="*10" classroomid="*14" groupids="*76" day="0" period="3"/>
+      <card classids="*15" subjectid="*205" teacherids="*10" classroomid="*14" groupids="*76" day="2" period="3"/>
+      <card classids="*16" subjectid="*212" teacherids="*10" classroomid="*14" groupids="*80" day="4" period="7"/>
+      <card classids="*16" subjectid="*212" teacherids="*10" classroomid="*14" groupids="*80" day="2" period="5"/>
+      <card classids="*17" subjectid="*223" teacherids="*10" classroomid="*14" groupids="*84" day="3" period="1"/>
+      <card classids="*17" subjectid="*223" teacherids="*10" classroomid="*14" groupids="*84" day="1" period="4"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*150" teacherids="*3" classroomid="*9" groupids="*67,*71,*75,*79,*83,*87" day="1" period="2"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*150" teacherids="*3" classroomid="*9" groupids="*67,*71,*75,*79,*83,*87" day="3" period="4"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*150" teacherids="*2" classroomid="*7" groupids="*65,*69,*73,*77,*81,*85" day="3" period="4"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*150" teacherids="*2" classroomid="*7" groupids="*65,*69,*73,*77,*81,*85" day="4" period="1"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*156" teacherids="*11" classroomid="*23" groupids="*67,*71,*75,*79,*83,*87" day="4" period="2"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*156" teacherids="*11" classroomid="*23" groupids="*65,*69,*73,*77,*81,*85" day="3" period="7"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*156" teacherids="*11" classroomid="*23" groupids="*66,*70,*74,*78,*82,*86" day="3" period="4"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*152" teacherids="*6" classroomid="*8" groupids="*66,*70,*74,*78,*82,*86" day="1" period="1"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*152" teacherids="*6" classroomid="*8" groupids="*66,*70,*74,*78,*82,*86" day="3" period="7"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*30" teacherids="*11" classroomid="*23" groupids="*30,*35,*40,*45,*50,*55,*60" day="4" period="1"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*30" teacherids="*11" classroomid="*23" groupids="*31,*36,*41,*46,*51,*56,*61" day="3" period="1"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*30" teacherids="*11" classroomid="*23" groupids="*32,*37,*42,*47,*52,*57,*62" day="2" period="5"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*30" teacherids="*11" classroomid="*23" groupids="*33,*38,*43,*48,*53,*58,*63" day="3" period="3"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*31" teacherids="*7" classroomid="*5" groupids="*32,*37,*42,*47,*52,*57,*62" day="2" period="7"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*31" teacherids="*7" classroomid="*4" groupids="*31,*36,*41,*46,*51,*56,*61" day="2" period="5"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*31" teacherids="*7" classroomid="*3" groupids="*30,*35,*40,*45,*50,*55,*60" day="2" period="4"/>
+      <card classids="*1,*2,*3,*4" subjectid="*8" teacherids="*13" classroomid="*11" groupids="*2,*9,*16,*23" day="2" period="3"/>
+      <card classids="*1,*2,*3,*4" subjectid="*8" teacherids="*13" classroomid="*11" groupids="*2,*9,*16,*23" day="4" period="1"/>
+      <card classids="*1,*2,*3,*4" subjectid="*10" teacherids="*11" classroomid="*23" groupids="*4,*11,*18,*25" day="0" period="6"/>
+      <card classids="*1,*2,*3,*4" subjectid="*10" teacherids="*11" classroomid="*23" groupids="*4,*11,*18,*25" day="3" period="6"/>
+      <card classids="*1,*2,*3,*4" subjectid="*10" teacherids="*11" classroomid="*23" groupids="*2,*9,*16,*23" day="1" period="1"/>
+      <card classids="*1,*2,*3,*4" subjectid="*10" teacherids="*11" classroomid="*23" groupids="*2,*9,*16,*23" day="2" period="7"/>
+      <card classids="*1,*2,*3,*4" subjectid="*10" teacherids="*11" classroomid="*23" groupids="*3,*10,*17,*24" day="0" period="7"/>
+      <card classids="*1,*2,*3,*4" subjectid="*10" teacherids="*11" classroomid="*23" groupids="*3,*10,*17,*24" day="2" period="4"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*150" teacherids="*2" classroomid="*8" groupids="*66,*70,*74,*78,*82,*86" day="1" period="3"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*150" teacherids="*2" classroomid="*8" groupids="*66,*70,*74,*78,*82,*86" day="4" period="2"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*27" teacherids="*3" classroomid="*6" groupids="*33,*38,*43,*48,*53,*58,*63" day="2" period="7"/>
+      <card classids="*1,*2,*3,*4" subjectid="*6" teacherids="*3" classroomid="*13" groupids="*4,*11,*18,*25" day="2" period="3"/>
+      <card classids="*1,*2,*3,*4" subjectid="*6" teacherids="*3" classroomid="*11" groupids="*2,*9,*16,*23" day="0" period="6"/>
+      <card classids="*1,*2,*3,*4" subjectid="*5" teacherids="*3" classroomid="*11" groupids="*2,*9,*16,*23" day="4" period="5"/>
+      <card classids="*1,*2,*3,*4" subjectid="*5" teacherids="*3" classroomid="*13" groupids="*4,*11,*18,*25" day="0" period="7"/>
+      <card classids="*15" subjectid="*210" teacherids="*15" classroomid="*19" groupids="*76" day="4" period="4"/>
+      <card classids="*15" subjectid="*210" teacherids="*15" classroomid="*19" groupids="*76" day="4" period="5"/>
+      <card classids="*15" subjectid="*210" teacherids="*15" classroomid="*19" groupids="*76" day="2" period="6"/>
+      <card classids="*15" subjectid="*210" teacherids="*15" classroomid="*19" groupids="*76" day="2" period="7"/>
+      <card classids="*15" subjectid="*210" teacherids="*15" classroomid="*19" groupids="*76" day="1" period="4"/>
+      <card classids="*15" subjectid="*210" teacherids="*15" classroomid="*19" groupids="*76" day="1" period="5"/>
+      <card classids="*8" subjectid="*76" teacherids="*14" classroomid="*6" groupids="*44" day="1" period="3"/>
+      <card classids="*8" subjectid="*76" teacherids="*14" classroomid="*6" groupids="*44" day="4" period="7"/>
+      <card classids="*8" subjectid="*76" teacherids="*14" classroomid="*6" groupids="*44" day="2" period="3"/>
+      <card classids="*7" subjectid="*63" teacherids="*5" classroomid="*4" groupids="*39" day="4" period="2"/>
+      <card classids="*7" subjectid="*63" teacherids="*5" classroomid="*4" groupids="*39" day="2" period="1"/>
+      <card classids="*7" subjectid="*63" teacherids="*5" classroomid="*4" groupids="*39" day="1" period="6"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*153" teacherids="*8" classroomid="*9" groupids="*67,*71,*75,*79,*83,*87" day="3" period="7"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*153" teacherids="*8" classroomid="*8" groupids="*66,*70,*74,*78,*82,*86" day="3" period="5"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*153" teacherids="*8" classroomid="*7" groupids="*65,*69,*73,*77,*81,*85" day="3" period="6"/>
+      <card classids="*1,*2,*3,*4" subjectid="*11" teacherids="*8" classroomid="*11" groupids="*2,*9,*16,*23" day="0" period="1"/>
+      <card classids="*1,*2,*3,*4" subjectid="*11" teacherids="*8" classroomid="*11" groupids="*2,*9,*16,*23" day="2" period="2"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*24" teacherids="*4" classroomid="*3" groupids="*30,*35,*40,*45,*50,*55,*60" day="3" period="1"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*24" teacherids="*4" classroomid="*6" groupids="*33,*38,*43,*48,*53,*58,*63" day="1" period="4"/>
+      <card classids="*9" subjectid="*89" teacherids="*18" classroomid="*3" groupids="*49" day="3" period="7"/>
+      <card classids="*9" subjectid="*89" teacherids="*18" classroomid="*3" groupids="*49" day="0" period="6"/>
+      <card classids="*15" subjectid="*207" teacherids="*18" classroomid="*8" groupids="*76" day="2" period="5"/>
+      <card classids="*15" subjectid="*207" teacherids="*18" classroomid="*8" groupids="*76" day="0" period="7"/>
+      <card classids="*6" subjectid="*57" teacherids="*24" classroomid="*15" groupids="*34" day="4" period="2"/>
+      <card classids="*6" subjectid="*57" teacherids="*24" classroomid="*15" groupids="*34" day="4" period="3"/>
+      <card classids="*10" subjectid="*101" teacherids="*27" classroomid="*19" groupids="*54" day="3" period="6"/>
+      <card classids="*10" subjectid="*101" teacherids="*27" classroomid="*19" groupids="*54" day="3" period="7"/>
+      <card classids="*10" subjectid="*101" teacherids="*27" classroomid="*19" groupids="*54" day="2" period="1"/>
+      <card classids="*10" subjectid="*101" teacherids="*27" classroomid="*19" groupids="*54" day="2" period="2"/>
+      <card classids="*16" subjectid="*222" teacherids="*27" classroomid="*19" groupids="*80" day="2" period="3"/>
+      <card classids="*16" subjectid="*222" teacherids="*27" classroomid="*19" groupids="*80" day="2" period="4"/>
+      <card classids="*10" subjectid="*96" teacherids="*28" classroomid="*5" groupids="*54" day="4" period="7"/>
+      <card classids="*10" subjectid="*96" teacherids="*28" classroomid="*5" groupids="*54" day="0" period="2"/>
+      <card classids="*10" subjectid="*97" teacherids="*28" classroomid="*21" groupids="*54" day="1" period="1"/>
+      <card classids="*10" subjectid="*97" teacherids="*28" classroomid="*21" groupids="*54" day="1" period="2"/>
+      <card classids="*11" subjectid="*108" teacherids="*28" classroomid="*5" groupids="*59" day="0" period="1"/>
+      <card classids="*11" subjectid="*108" teacherids="*28" classroomid="*5" groupids="*59" day="4" period="3"/>
+      <card classids="*11" subjectid="*109" teacherids="*28" classroomid="*18" groupids="*59" day="1" period="6"/>
+      <card classids="*11" subjectid="*109" teacherids="*28" classroomid="*18" groupids="*59" day="1" period="7"/>
+      <card classids="*16" subjectid="*219" teacherids="*28" classroomid="*9" groupids="*80" day="4" period="6"/>
+      <card classids="*16" subjectid="*219" teacherids="*28" classroomid="*9" groupids="*80" day="3" period="1"/>
+      <card classids="*16" subjectid="*220" teacherids="*28" classroomid="*18" groupids="*80" day="0" period="4"/>
+      <card classids="*16" subjectid="*220" teacherids="*28" classroomid="*18" groupids="*80" day="0" period="5"/>
+      <card classids="*3" subjectid="*19" teacherids="*30" classroomid="*12" groupids="*15" day="3" period="3"/>
+      <card classids="*3" subjectid="*19" teacherids="*30" classroomid="*12" groupids="*15" day="1" period="5"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*25" teacherids="*30" classroomid="*20" groupids="*33,*38,*43,*48,*53,*58,*63" day="0" period="5"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*25" teacherids="*30" classroomid="*20" groupids="*30,*35,*40,*45,*50,*55,*60" day="3" period="2"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*25" teacherids="*30" classroomid="*20" groupids="*31,*36,*41,*46,*51,*56,*61" day="1" period="4"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*25" teacherids="*30" classroomid="*18" groupids="*32,*37,*42,*47,*52,*57,*62" day="2" period="4"/>
+      <card classids="*11" subjectid="*116" teacherids="*30" classroomid="*20" groupids="*59" day="4" period="4"/>
+      <card classids="*11" subjectid="*116" teacherids="*30" classroomid="*20" groupids="*59" day="4" period="5"/>
+      <card classids="*11" subjectid="*117" teacherids="*30" classroomid="*20" groupids="*59" day="0" period="6"/>
+      <card classids="*11" subjectid="*117" teacherids="*30" classroomid="*20" groupids="*59" day="0" period="7"/>
+      <card classids="*17" subjectid="*224" teacherids="*30" classroomid="*20" groupids="*84" day="0" period="3"/>
+      <card classids="*17" subjectid="*224" teacherids="*30" classroomid="*20" groupids="*84" day="0" period="4"/>
+      <card classids="*10" subjectid="*107" teacherids="*31" classroomid="*18" groupids="*54" day="4" period="4"/>
+      <card classids="*10" subjectid="*107" teacherids="*31" classroomid="*18" groupids="*54" day="4" period="5"/>
+      <card classids="*11" subjectid="*113" teacherids="*31" classroomid="*21" groupids="*59" day="0" period="2"/>
+      <card classids="*11" subjectid="*113" teacherids="*31" classroomid="*21" groupids="*59" day="0" period="3"/>
+      <card classids="*11" subjectid="*119" teacherids="*31" classroomid="*18" groupids="*59" day="3" period="6"/>
+      <card classids="*11" subjectid="*119" teacherids="*31" classroomid="*18" groupids="*59" day="3" period="7"/>
+      <card classids="*16" subjectid="*215" teacherids="*32" classroomid="*21" groupids="*80" day="1" period="7"/>
+      <card classids="*16" subjectid="*216" teacherids="*32" classroomid="*21" groupids="*80" day="4" period="4"/>
+      <card classids="*16" subjectid="*216" teacherids="*32" classroomid="*21" groupids="*80" day="4" period="5"/>
+      <card classids="*16" subjectid="*216" teacherids="*32" classroomid="*21" groupids="*80" day="3" period="2"/>
+      <card classids="*16" subjectid="*216" teacherids="*32" classroomid="*21" groupids="*80" day="3" period="3"/>
+      <card classids="*10" subjectid="*102" teacherids="*29" classroomid="*18" groupids="*54" day="0" period="1"/>
+      <card classids="*10" subjectid="*104" teacherids="*29" classroomid="*18" groupids="*54" day="1" period="3"/>
+      <card classids="*10" subjectid="*105" teacherids="*29" classroomid="*18" groupids="*54" day="4" period="2"/>
+      <card classids="*10" subjectid="*105" teacherids="*29" classroomid="*18" groupids="*54" day="4" period="3"/>
+      <card classids="*11" subjectid="*114" teacherids="*29" classroomid="*18" groupids="*59" day="2" period="3"/>
+      <card classids="*16" subjectid="*217" teacherids="*33" classroomid="*21" groupids="*80" day="2" period="6"/>
+      <card classids="*16" subjectid="*217" teacherids="*33" classroomid="*21" groupids="*80" day="2" period="7"/>
+      <card classids="*16" subjectid="*218" teacherids="*33" classroomid="*21" groupids="*80" day="1" period="4"/>
+      <card classids="*16" subjectid="*218" teacherids="*33" classroomid="*21" groupids="*80" day="1" period="5"/>
+      <card classids="*5" subjectid="*37" teacherids="*24" classroomid="*15" groupids="*29" day="4" period="6"/>
+      <card classids="*5" subjectid="*37" teacherids="*24" classroomid="*15" groupids="*29" day="4" period="7"/>
+      <card classids="*11" subjectid="*115" teacherids="*29" classroomid="*18" groupids="*59" day="1" period="1"/>
+      <card classids="*11" subjectid="*115" teacherids="*29" classroomid="*18" groupids="*59" day="1" period="2"/>
+      <card classids="*3" subjectid="*20" teacherids="*19" classroomid="*24" groupids="*15" day="4" period="2"/>
+      <card classids="*3" subjectid="*20" teacherids="*19" classroomid="*24" groupids="*15" day="4" period="3"/>
+      <card classids="*4" subjectid="*20" teacherids="*19" classroomid="*24" groupids="*22" day="2" period="5"/>
+      <card classids="*4" subjectid="*20" teacherids="*19" classroomid="*24" groupids="*22" day="2" period="6"/>
+      <card classids="*11" subjectid="*110" teacherids="*33" classroomid="*20" groupids="*59" day="4" period="6"/>
+      <card classids="*11" subjectid="*110" teacherids="*33" classroomid="*20" groupids="*59" day="4" period="7"/>
+      <card classids="*11" subjectid="*111" teacherids="*33" classroomid="*20" groupids="*59" day="2" period="1"/>
+      <card classids="*11" subjectid="*111" teacherids="*33" classroomid="*20" groupids="*59" day="2" period="2"/>
+      <card classids="*5" subjectid="*34" teacherids="*25" classroomid="*17" groupids="*29" day="1" period="2"/>
+      <card classids="*5" subjectid="*34" teacherids="*25" classroomid="*17" groupids="*29" day="1" period="3"/>
+      <card classids="" subjectid="*263" teacherids="*5" classroomid="" groupids="" day="1" period="1"/>
+      <card classids="" subjectid="*263" teacherids="*5" classroomid="" groupids="" day="2" period="4"/>
+      <card classids="" subjectid="*263" teacherids="*5" classroomid="" groupids="" day="3" period="5"/>
+      <card classids="" subjectid="*263" teacherids="*5" classroomid="" groupids="" day="4" period="5"/>
+      <card classids="*10" subjectid="*98" teacherids="*31" classroomid="*5" groupids="*54" day="1" period="6"/>
+      <card classids="*10" subjectid="*98" teacherids="*31" classroomid="*5" groupids="*54" day="4" period="6"/>
+      <card classids="*1,*2,*3,*4" subjectid="*11" teacherids="*8" classroomid="*13" groupids="*4,*11,*18,*25" day="0" period="3"/>
+      <card classids="*1,*2,*3,*4" subjectid="*11" teacherids="*8" classroomid="*13" groupids="*4,*11,*18,*25" day="2" period="1"/>
+      <card classids="*5,*6,*7,*8,*9,*10,*11" subjectid="*31" teacherids="*8" classroomid="*6" groupids="*33,*38,*43,*48,*53,*58,*63" day="0" period="4"/>
+      <card classids="*17" subjectid="*231" teacherids="*33" classroomid="*20" groupids="*84" day="1" period="6"/>
+      <card classids="*17" subjectid="*231" teacherids="*33" classroomid="*20" groupids="*84" day="1" period="7"/>
+      <card classids="*17" subjectid="*230" teacherids="*33" classroomid="*20" groupids="*84" day="2" period="3"/>
+      <card classids="*17" subjectid="*230" teacherids="*33" classroomid="*20" groupids="*84" day="2" period="4"/>
+      <card classids="*8" subjectid="*72" teacherids="*17" classroomid="*6" groupids="*44" day="0" period="7"/>
+      <card classids="*8" subjectid="*72" teacherids="*17" classroomid="*6" groupids="*44" day="2" period="2"/>
+      <card classids="*8" subjectid="*72" teacherids="*17" classroomid="*6" groupids="*44" day="3" period="7"/>
+      <card classids="*8" subjectid="*72" teacherids="*17" classroomid="*6" groupids="*44" day="0" period="6"/>
+      <card classids="*8" subjectid="*73" teacherids="*17" classroomid="*6" groupids="*44" day="4" period="3"/>
+      <card classids="*8" subjectid="*73" teacherids="*17" classroomid="*6" groupids="*44" day="4" period="4"/>
+      <card classids="*7" subjectid="*67" teacherids="*17" classroomid="*4" groupids="*39" day="3" period="6"/>
+      <card classids="*7" subjectid="*67" teacherids="*17" classroomid="*4" groupids="*39" day="2" period="3"/>
+      <card classids="*8" subjectid="*70" teacherids="*17" classroomid="*6" groupids="*44" day="2" period="1"/>
+      <card classids="*8" subjectid="*70" teacherids="*17" classroomid="*6" groupids="*44" day="1" period="1"/>
+      <card classids="*8" subjectid="*71" teacherids="*17" classroomid="*6" groupids="*44" day="0" period="1"/>
+      <card classids="*8" subjectid="*71" teacherids="*17" classroomid="*6" groupids="*44" day="0" period="2"/>
+      <card classids="*15" subjectid="*208" teacherids="*17" classroomid="*8" groupids="*76" day="0" period="5"/>
+      <card classids="*15" subjectid="*208" teacherids="*17" classroomid="*8" groupids="*76" day="4" period="7"/>
+      <card classids="*15" subjectid="*208" teacherids="*17" classroomid="*8" groupids="*76" day="1" period="7"/>
+      <card classids="*15" subjectid="*208" teacherids="*17" classroomid="*8" groupids="*76" day="2" period="4"/>
+      <card classids="*15" subjectid="*208" teacherids="*17" classroomid="*8" groupids="*76" day="0" period="4"/>
+      <card classids="*3" subjectid="*18" teacherids="*20" classroomid="*12" groupids="*15" day="1" period="2"/>
+      <card classids="*3" subjectid="*18" teacherids="*20" classroomid="*12" groupids="*15" day="1" period="3"/>
+      <card classids="*3" subjectid="*18" teacherids="*20" classroomid="*12" groupids="*15" day="3" period="4"/>
+      <card classids="*3" subjectid="*18" teacherids="*20" classroomid="*12" groupids="*15" day="3" period="5"/>
+      <card classids="*4" subjectid="*18" teacherids="*20" classroomid="*13" groupids="*22" day="3" period="1"/>
+      <card classids="*4" subjectid="*18" teacherids="*20" classroomid="*13" groupids="*22" day="3" period="2"/>
+      <card classids="*4" subjectid="*18" teacherids="*20" classroomid="*13" groupids="*22" day="1" period="4"/>
+      <card classids="*4" subjectid="*18" teacherids="*20" classroomid="*13" groupids="*22" day="1" period="5"/>
+      <card classids="*1,*2,*3,*4" subjectid="*8" teacherids="*17" classroomid="*13" groupids="*4,*11,*18,*25" day="1" period="6"/>
+      <card classids="*1,*2,*3,*4" subjectid="*8" teacherids="*17" classroomid="*13" groupids="*4,*11,*18,*25" day="4" period="5"/>
+      <card classids="*1,*2,*3,*4" subjectid="*3" teacherids="*4" classroomid="*1" groupids="*3,*10,*17,*24" day="0" period="6"/>
+      <card classids="*1,*2,*3,*4" subjectid="*2" teacherids="*5" classroomid="*1" groupids="*3,*10,*17,*24" day="0" period="3"/>
+      <card classids="*1,*2,*3,*4" subjectid="*2" teacherids="*5" classroomid="*1" groupids="*3,*10,*17,*24" day="3" period="7"/>
+      <card classids="*1,*2,*3,*4" subjectid="*2" teacherids="*5" classroomid="*1" groupids="*3,*10,*17,*24" day="2" period="7"/>
+      <card classids="*1,*2,*3,*4" subjectid="*9" teacherids="*6" classroomid="*1" groupids="*3,*10,*17,*24" day="1" period="6"/>
+      <card classids="*1,*2,*3,*4" subjectid="*9" teacherids="*6" classroomid="*1" groupids="*3,*10,*17,*24" day="4" period="5"/>
+      <card classids="*1,*2,*3,*4" subjectid="*5" teacherids="*3" classroomid="*1" groupids="*3,*10,*17,*24" day="4" period="7"/>
+      <card classids="*1,*2,*3,*4" subjectid="*8" teacherids="*16" classroomid="*1" groupids="*3,*10,*17,*24" day="4" period="1"/>
+      <card classids="*1,*2,*3,*4" subjectid="*8" teacherids="*16" classroomid="*1" groupids="*3,*10,*17,*24" day="1" period="1"/>
+      <card classids="*1,*2,*3,*4" subjectid="*6" teacherids="*3" classroomid="*1" groupids="*3,*10,*17,*24" day="2" period="1"/>
+      <card classids="*1,*2,*3,*4" subjectid="*7" teacherids="*2" classroomid="*1" groupids="*3,*10,*17,*24" day="2" period="2"/>
+      <card classids="*1,*2,*3,*4" subjectid="*7" teacherids="*2" classroomid="*1" groupids="*3,*10,*17,*24" day="0" period="2"/>
+      <card classids="*1,*2,*3,*4" subjectid="*7" teacherids="*2" classroomid="*1" groupids="*3,*10,*17,*24" day="4" period="4"/>
+      <card classids="*1,*2,*3,*4" subjectid="*11" teacherids="*6" classroomid="*1" groupids="*3,*10,*17,*24" day="2" period="3"/>
+      <card classids="*1,*2,*3,*4" subjectid="*11" teacherids="*6" classroomid="*1" groupids="*3,*10,*17,*24" day="0" period="1"/>
+      <card classids="*1,*2,*3,*4" subjectid="*4" teacherids="*1" classroomid="*1" groupids="*3,*10,*17,*24" day="3" period="6"/>
+      <card classids="*12" subjectid="*160" teacherids="*25" classroomid="*16" groupids="*64" day="2" period="3"/>
+      <card classids="*12" subjectid="*160" teacherids="*25" classroomid="*16" groupids="*64" day="1" period="4"/>
+      <card classids="*12" subjectid="*160" teacherids="*25" classroomid="*16" groupids="*64" day="0" period="5"/>
+      <card classids="*12" subjectid="*165" teacherids="*22" classroomid="*15" groupids="*64" day="0" period="4"/>
+      <card classids="*12" subjectid="*165" teacherids="*22" classroomid="*15" groupids="*64" day="4" period="4"/>
+      <card classids="*12" subjectid="*165" teacherids="*22" classroomid="*15" groupids="*64" day="2" period="4"/>
+      <card classids="*13" subjectid="*173" teacherids="*22" classroomid="*16" groupids="*68" day="1" period="6"/>
+      <card classids="*13" subjectid="*173" teacherids="*22" classroomid="*15" groupids="*68" day="3" period="3"/>
+      <card classids="*13" subjectid="*173" teacherids="*22" classroomid="*15" groupids="*68" day="1" period="4"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*155" teacherids="*9" classroomid="*2" groupids="*66,*70,*74,*78,*82,*86" day="0" period="1"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*155" teacherids="*9" classroomid="*2" groupids="*67,*71,*75,*79,*83,*87" day="4" period="1"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*155" teacherids="*9" classroomid="*2" groupids="*65,*69,*73,*77,*81,*85" day="1" period="1"/>
+      <card classids="*16" subjectid="*221" teacherids="*27" classroomid="*9" groupids="*80" day="0" period="6"/>
+      <card classids="*16" subjectid="*221" teacherids="*27" classroomid="*9" groupids="*80" day="0" period="7"/>
+      <card classids="*6" subjectid="*52" teacherids="*21" classroomid="*10" groupids="*34" day="4" period="7"/>
+      <card classids="*6" subjectid="*52" teacherids="*21" classroomid="*16" groupids="*34" day="3" period="4"/>
+      <card classids="*6" subjectid="*52" teacherids="*21" classroomid="*10" groupids="*34" day="0" period="6"/>
+      <card classids="*6" subjectid="*56" teacherids="*24" classroomid="*16" groupids="*34" day="0" period="1"/>
+      <card classids="*6" subjectid="*56" teacherids="*24" classroomid="*16" groupids="*34" day="0" period="2"/>
+      <card classids="*5" subjectid="*35" teacherids="*21" classroomid="*15" groupids="*29" day="4" period="5"/>
+      <card classids="*5" subjectid="*35" teacherids="*21" classroomid="*10" groupids="*29" day="0" period="7"/>
+      <card classids="*5" subjectid="*35" teacherids="*21" classroomid="*16" groupids="*29" day="1" period="1"/>
+      <card classids="*5" subjectid="*39" teacherids="*25,*26" classroomid="*17" groupids="*29" day="3" period="5"/>
+      <card classids="*5" subjectid="*39" teacherids="*25,*26" classroomid="*17" groupids="*29" day="3" period="6"/>
+      <card classids="*5" subjectid="*39" teacherids="*25,*26" classroomid="*17" groupids="*29" day="3" period="7"/>
+      <card classids="*12" subjectid="*157" teacherids="*24,*26" classroomid="*16" groupids="*64" day="3" period="1"/>
+      <card classids="*12" subjectid="*157" teacherids="*24,*26" classroomid="*16" groupids="*64" day="3" period="2"/>
+      <card classids="*12" subjectid="*157" teacherids="*24,*26" classroomid="*16" groupids="*64" day="3" period="3"/>
+      <card classids="*12" subjectid="*157" teacherids="*24,*26" classroomid="*16" groupids="*64" day="2" period="5"/>
+      <card classids="*12" subjectid="*157" teacherids="*24,*26" classroomid="*16" groupids="*64" day="2" period="6"/>
+      <card classids="*12" subjectid="*157" teacherids="*24,*26" classroomid="*16" groupids="*64" day="2" period="7"/>
+      <card classids="*12" subjectid="*159" teacherids="*21,*26" classroomid="*16" groupids="*64" day="2" period="1"/>
+      <card classids="*12" subjectid="*159" teacherids="*21,*26" classroomid="*16" groupids="*64" day="2" period="2"/>
+      <card classids="*12" subjectid="*163" teacherids="*25" classroomid="*17" groupids="*64" day="1" period="7"/>
+      <card classids="*12" subjectid="*164" teacherids="*25,*26" classroomid="*17" groupids="*64" day="1" period="5"/>
+      <card classids="*12" subjectid="*164" teacherids="*25,*26" classroomid="*17" groupids="*64" day="1" period="6"/>
+      <card classids="*12" subjectid="*164" teacherids="*25,*26" classroomid="*17" groupids="*64" day="4" period="6"/>
+      <card classids="*12" subjectid="*164" teacherids="*25,*26" classroomid="*17" groupids="*64" day="4" period="7"/>
+      <card classids="*13" subjectid="*172" teacherids="*24" classroomid="*17" groupids="*68" day="0" period="3"/>
+      <card classids="*13" subjectid="*172" teacherids="*24" classroomid="*17" groupids="*68" day="0" period="4"/>
+      <card classids="*13" subjectid="*172" teacherids="*24" classroomid="*17" groupids="*68" day="2" period="3"/>
+      <card classids="*13" subjectid="*172" teacherids="*24" classroomid="*17" groupids="*68" day="2" period="4"/>
+      <card classids="*5" subjectid="*33" teacherids="*24" classroomid="*10" groupids="*29" day="1" period="6"/>
+      <card classids="*5" subjectid="*38" teacherids="*24" classroomid="*10" groupids="*29" day="1" period="7"/>
+      <card classids="*5" subjectid="*40" teacherids="*23" classroomid="*10" groupids="*29" day="2" period="3"/>
+      <card classids="*5" subjectid="*40" teacherids="*23" classroomid="*10" groupids="*29" day="2" period="2"/>
+      <card classids="*5" subjectid="*40" teacherids="*23" classroomid="*15" groupids="*29" day="3" period="4"/>
+      <card classids="*6" subjectid="*58" teacherids="*23" classroomid="*15" groupids="*34" day="1" period="6"/>
+      <card classids="*6" subjectid="*58" teacherids="*23" classroomid="*10" groupids="*34" day="0" period="3"/>
+      <card classids="*6" subjectid="*58" teacherids="*23" classroomid="*10" groupids="*34" day="4" period="5"/>
+      <card classids="*13" subjectid="*171" teacherids="*26" classroomid="*16" groupids="*68" day="1" period="7"/>
+      <card classids="*13" subjectid="*166" teacherids="*23" classroomid="*15" groupids="*68" day="0" period="5"/>
+      <card classids="*13" subjectid="*166" teacherids="*23" classroomid="*16" groupids="*68" day="4" period="6"/>
+      <card classids="*13" subjectid="*166" teacherids="*23" classroomid="*15" groupids="*68" day="1" period="5"/>
+      <card classids="*12" subjectid="*161" teacherids="*25" classroomid="*16" groupids="*64" day="0" period="3"/>
+      <card classids="*13" subjectid="*169" teacherids="*22" classroomid="*16" groupids="*68" day="4" period="7"/>
+      <card classids="*12" subjectid="*158" teacherids="*26" classroomid="*16" groupids="*64" day="4" period="5"/>
+      <card classids="*3,*4" subjectid="*12" teacherids="*26" classroomid="*12" groupids="*21,*28" day="0" period="4"/>
+      <card classids="*3,*4" subjectid="*12" teacherids="*26" classroomid="*12" groupids="*21,*28" day="0" period="5"/>
+      <card classids="*3,*4" subjectid="*12" teacherids="*11" classroomid="*13" groupids="*19,*26" day="0" period="4"/>
+      <card classids="*3,*4" subjectid="*12" teacherids="*11" classroomid="*13" groupids="*19,*26" day="0" period="5"/>
+      <card classids="*1,*2" subjectid="*12" teacherids="*11" classroomid="*1" groupids="*5,*12" day="1" period="2"/>
+      <card classids="*1,*2" subjectid="*12" teacherids="*11" classroomid="*1" groupids="*5,*12" day="1" period="3"/>
+      <card classids="*7" subjectid="*68" teacherids="*17" classroomid="*19" groupids="*39" day="3" period="4"/>
+      <card classids="*7" subjectid="*68" teacherids="*17" classroomid="*19" groupids="*39" day="3" period="5"/>
+      <card classids="*7" subjectid="*68" teacherids="*17" classroomid="*4" groupids="*39" day="1" period="2"/>
+      <card classids="*7" subjectid="*68" teacherids="*17" classroomid="*4" groupids="*39" day="1" period="3"/>
+      <card classids="*1" subjectid="*16" teacherids="*33" classroomid="*19" groupids="*1" day="3" period="2"/>
+      <card classids="*1" subjectid="*16" teacherids="*33" classroomid="*19" groupids="*1" day="3" period="3"/>
+      <card classids="*1" subjectid="*16" teacherids="*33" classroomid="*19" groupids="*1" day="4" period="2"/>
+      <card classids="*1" subjectid="*16" teacherids="*33" classroomid="*19" groupids="*1" day="4" period="3"/>
+      <card classids="*4" subjectid="*21" teacherids="*30" classroomid="*20" groupids="*22" day="3" period="4"/>
+      <card classids="*4" subjectid="*21" teacherids="*30" classroomid="*20" groupids="*22" day="3" period="5"/>
+      <card classids="*17" subjectid="*228" teacherids="*32" classroomid="*21" groupids="*84" day="4" period="6"/>
+      <card classids="*17" subjectid="*228" teacherids="*32" classroomid="*21" groupids="*84" day="4" period="7"/>
+      <card classids="*3,*4" subjectid="*12" teacherids="*32,*33" classroomid="*19" groupids="*20,*27" day="0" period="4"/>
+      <card classids="*3,*4" subjectid="*12" teacherids="*32,*33" classroomid="*19" groupids="*20,*27" day="0" period="5"/>
+      <card classids="*2" subjectid="*16" teacherids="*32" classroomid="*18" groupids="*8" day="3" period="4"/>
+      <card classids="*2" subjectid="*16" teacherids="*32" classroomid="*18" groupids="*8" day="3" period="5"/>
+      <card classids="*2" subjectid="*16" teacherids="*32" classroomid="*18" groupids="*8" day="1" period="4"/>
+      <card classids="*2" subjectid="*16" teacherids="*32" classroomid="*18" groupids="*8" day="1" period="5"/>
+      <card classids="*3" subjectid="*21" teacherids="*31" classroomid="*18" groupids="*15" day="2" period="5"/>
+      <card classids="*3" subjectid="*21" teacherids="*31" classroomid="*18" groupids="*15" day="2" period="6"/>
+      <card classids="*17" subjectid="*228" teacherids="*32" classroomid="*21" groupids="*84" day="0" period="6"/>
+      <card classids="*17" subjectid="*228" teacherids="*32" classroomid="*21" groupids="*84" day="0" period="7"/>
+      <card classids="*17" subjectid="*229" teacherids="*32" classroomid="*21" groupids="*84" day="2" period="5"/>
+      <card classids="*17" subjectid="*225" teacherids="*30,*32" classroomid="*20" groupids="*84" day="2" period="6"/>
+      <card classids="*17" subjectid="*225" teacherids="*30,*32" classroomid="*20" groupids="*84" day="2" period="7"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*154" teacherids="*33" classroomid="*20" groupids="*65,*69,*73,*77,*81,*85" day="0" period="1"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*154" teacherids="*33" classroomid="*20" groupids="*67,*71,*75,*79,*83,*87" day="0" period="2"/>
+      <card classids="*12,*13,*14,*15,*16,*17" subjectid="*154" teacherids="*33" classroomid="*20" groupids="*66,*70,*74,*78,*82,*86" day="4" period="1"/>
+      <card classids="*16" subjectid="*213" teacherids="*29" classroomid="*2" groupids="*80" day="1" period="6"/>
+      <card classids="*16" subjectid="*213" teacherids="*29" classroomid="*18" groupids="*80" day="2" period="2"/>
+      <card classids="*16" subjectid="*213" teacherids="*29" classroomid="*2" groupids="*80" day="0" period="3"/>
+      <card classids="*16" subjectid="*214" teacherids="*29" classroomid="*18" groupids="*80" day="2" period="1"/>
+      <card classids="*17" subjectid="*226" teacherids="*29" classroomid="*2" groupids="*84" day="1" period="5"/>
+      <card classids="*17" subjectid="*226" teacherids="*29" classroomid="*2" groupids="*84" day="4" period="4"/>
+      <card classids="*17" subjectid="*226" teacherids="*29" classroomid="*2" groupids="*84" day="0" period="5"/>
+      <card classids="*17" subjectid="*227" teacherids="*29,*28" classroomid="*2" groupids="*84" day="4" period="5"/>
+      <card classids="*17" subjectid="*232" teacherids="*28" classroomid="*9" groupids="*84" day="3" period="2"/>
+      <card classids="*17" subjectid="*233" teacherids="*28" classroomid="*21" groupids="*84" day="2" period="1"/>
+      <card classids="*17" subjectid="*233" teacherids="*28" classroomid="*21" groupids="*84" day="2" period="2"/>
+      <card classids="*17" subjectid="*232" teacherids="*28,*27" classroomid="*9" groupids="*84" day="3" period="3"/>
+      <card classids="*10" subjectid="*103" teacherids="*29" classroomid="*21" groupids="*54" day="3" period="4"/>
+      <card classids="*10" subjectid="*103" teacherids="*29" classroomid="*21" groupids="*54" day="3" period="5"/>
+      <card classids="*1,*2" subjectid="*12" teacherids="*32" classroomid="*2" groupids="*6,*13" day="1" period="2"/>
+      <card classids="*1,*2" subjectid="*12" teacherids="*32" classroomid="*2" groupids="*6,*13" day="1" period="3"/>
+      <card classids="*1,*2" subjectid="*12" teacherids="*26,*33" classroomid="*19" groupids="*7,*14" day="1" period="2"/>
+      <card classids="*1,*2" subjectid="*12" teacherids="*26,*33" classroomid="*19" groupids="*7,*14" day="1" period="3"/>
+      <card classids="*13" subjectid="*168" teacherids="*25" classroomid="*17" groupids="*68" day="2" period="1"/>
+      <card classids="*13" subjectid="*168" teacherids="*25" classroomid="*17" groupids="*68" day="2" period="2"/>
+      <card classids="*13" subjectid="*168" teacherids="*25" classroomid="*17" groupids="*68" day="4" period="4"/>
+      <card classids="*13" subjectid="*168" teacherids="*25" classroomid="*17" groupids="*68" day="4" period="5"/>
+      <card classids="*13" subjectid="*168" teacherids="*25" classroomid="*16" groupids="*68" day="0" period="6"/>
+      <card classids="*13" subjectid="*168" teacherids="*25" classroomid="*16" groupids="*68" day="0" period="7"/>
+      <card classids="*6" subjectid="*54" teacherids="*22" classroomid="*17" groupids="*34" day="0" period="7"/>
+      <card classids="*6" subjectid="*54" teacherids="*22" classroomid="*10" groupids="*34" day="4" period="6"/>
+      <card classids="*12" subjectid="*162" teacherids="*24,*26" classroomid="*15" groupids="*64" day="0" period="6"/>
+      <card classids="*12" subjectid="*162" teacherids="*24,*26" classroomid="*15" groupids="*64" day="0" period="7"/>
+      <card classids="*10" subjectid="*100" teacherids="*27" classroomid="*5" groupids="*54" day="0" period="3"/>
+   </cards>
+</timetable>

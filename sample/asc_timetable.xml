@@ -1,0 +1,23 @@
+<!--
+This is sample export configuration file. You can edit it to configure aSc Timetables XML export and
+get your data in desired structure. For complete list of possible tables, columns and options see:
+
+http://spreadsheets.google.com/pub?key=pd1XC7PzmjlmDNGYYUgemOA&output=html
+
+If you are vendor of school managment software in your country and wish to have your export configuration
+file included in standard aSc Timetables installation, please contact us at: support@asctt.com
+-->
+<timetable importtype="database" options="idprefix:MyApp" displayname="MyApp sample XML configuration" displaycountries="gr">
+   <teachers options="import:disable,canadd,canremove,canupdate,primarytt,silent" columns="id,name,short">
+   </teachers>
+   <classes options="import:disable,canadd,canremove,canupdate,primarytt,silent" columns="id,name">
+   </classes>
+   <subjects options="import:disable,canadd,canremove,canupdate,primarytt,silent" columns="id,name,short">
+   </subjects>
+   <classrooms options="import:disable,canadd,canremove,canupdate,primarytt,silent" columns="id,name,short">
+   </classrooms>
+   <groups options="import:disable,canadd,canremove,canupdate,primarytt,silent" columns="id,name,classid,entireclass">
+   </groups>
+   <cards options="import:disable,canadd,canremove,canupdate,primarytt,silent" columns="day,period,classids,groupids,subjectid,teacherids,classroomid">
+   </cards>
+</timetable>

@@ -1,0 +1,22 @@
+$sql  = "
+
+CREATE TABLE #TABLE_ID# 
+SELECT zzzsys_form_id AS form_id, 
+CONCAT(sfo_name, ' (form)') AS form_name 
+FROM zzzsys_form 
+WHERE (zzzsys_form_id NOT LIKE '#nu_denied#' OR zzzsys_form_id = 'nuhome')
+
+";
+
+nuRunQuery($sql);
+
+$sql  = "
+
+INSERT INTO #TABLE_ID# 
+SELECT zzzsys_object_id AS form_id,
+CONCAT(sob_all_name,' (subform)') AS form_name 
+FROM zzzsys_object 
+WHERE sob_all_type = 'subform'
+AND sob_zzzsys_form_id NOT LIKE '#nu_denied#'";
+
+nuRunQuery($sql);

@@ -1,0 +1,60 @@
+$s = "
+
+    SELECT * 
+    FROM zzzsys_setup
+    WHERE zzzsys_setup_id = '1'
+
+";
+
+$t = nuRunQuery($s);
+
+$r = db_fetch_object($t);
+
+if($r->set_splash != '1'){
+
+    $nb = '<strong><strong><span style="color: #78C13A; text-shadow: 1px 1px #D0D7D1;">nu</span><span style="color: #03AAE9; text-shadow: 1px 1px #D0D7D1;">Builder</span></strong><span style="color: #FB0003; text-shadow: 1px 1px #D0D7D1;"><i>Pro</i></span></strong>';
+
+    $h = '<img id="talkingmike" style="position:absolute;left:10px;top:10px" src="mike.png" width="64" height="133">';
+    $h = $h . '<div id="miketalking" style="position:absolute;left:100px;top:10px">';
+    $h = $h . 'Hi, welcome to ' . $nb . '.<br><br>The easiest way to get started<br>with ' . $nb . ' is with a <strong>Fast Form</strong>.<br><br>';
+    $h = $h . 'To learn how to create a <strong>Fast Form</strong> please<br>check out this video.<br><br>';
+    $h = $h . '<a href="https://www.youtube.com/watch?v=P7SHJtikcTM" target="_blank"><strong>Here</strong></a>';
+    $h = $h . '</div>';
+    $h = $h . '<div  style="position:absolute;left:50px;top:200px"><input type="checkbox" id="nuCheckClose"> Do not show this message again</div>';
+    $h = $h . '<input id="closesplash" onclick="nuCloseSplash()" type="button" value="OK" style="background-color:#7CC342;color:white;padding:2px;position:absolute;left:350px;top:200px;width:50px"/>';
+
+    
+    $j = "
+
+	var e = document.createElement('div');
+	
+	e.setAttribute('id', 'nuSplash');
+	
+	$('#nu_tab_area0').append(e);
+	
+	$('#nuSplash').css({
+		'width'            : 450,
+		'height'           : 250,
+		'top'              : -10,
+		'left'             : 250,
+		'position'         : 'absolute',
+		'background-color' : 'white',
+		'color'            : 'black',
+		'z-index'          : 5000,
+		'border-width'     : '1px',
+		'border-color'     : 'black',
+		'border-style'     : 'solid',
+		'filter'           : 'Alpha(Opacity=100)',
+		'opacity'          : '1',
+		'box-shadow'       : '5px 5px 5px #888888'
+	})
+
+	$('#nuSplash').html('$h');
+
+    
+    ";
+
+    nuAddJavascript($j);
+    
+}
+

@@ -1,0 +1,1 @@
+nuRunQuery("UPDATE zzzsys_setup SET set_splash = '1'");

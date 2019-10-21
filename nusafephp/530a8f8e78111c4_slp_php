@@ -1,0 +1,68 @@
+echo "<pre>";
+echo "Testing Email Settings<br>======================<br>";
+
+$setup                      = $GLOBALS['nuSetup'];                                      //-- Read SMTP AUTH Settings from zzsys_setup table	
+
+if (!empty($setup->set_smtp_username))          { $setup->set_smtp_username = trim($setup->set_smtp_username);}                       else{$errorText .= "SMTP Username not set.<br>";}
+if (!empty($setup->set_smtp_password)) 	        { $setup->set_smtp_password = trim($setup->set_smtp_password);}                       else{$errorText .= "SMTP Password not set.<br>";}
+if (!empty($setup->set_smtp_host))              { $setup->set_smtp_host = trim($setup->set_smtp_host);}                               else{$errorText .= "SMTP Host not set.<br>";}
+if (!empty($setup->set_smtp_from_address))      { $setup->set_smtp_from_address = trim($setup->set_smtp_from_address);}               else{$errorText .= "SMTP From Address not set.<br>";}
+if (!empty($setup->set_smtp_port))              { $setup->set_smtp_port = intval($setup->set_smtp_port);}                             else{$errorText .= "SMTP PORT not set.<br>";}
+if (!empty($setup->set_smtp_use_ssl))           { $setup->set_smtp_use_ssl = (intval($setup->set_smtp_use_ssl) == 1) ? true : false;} else{$setup->set_smtp_use_ssl = false;}
+if (!empty($setup->set_smtp_from_name))         { $SMTPname = trim($setup->set_smtp_from_name);}	                              else{$SMTPname = "nuBuilder";}
+
+if ($errorText != '') {
+	nuDisplayError("Unable to send SMTP Email, the following error(s) occured:<br>" . $errorText);
+	return;
+	
+}else{
+
+	echo "<br>SMTPhost: " .$setup->set_smtp_host;
+	echo "<br>SMTPport: " .$setup->set_smtp_port;
+	echo "<br>SMTPauth: " .$setup->set_smtp_use_ssl;
+	echo "<br>SMTPuser: " .$setup->set_smtp_username;
+	echo "<br>SMTPpass: " .$setup->set_smtp_password;
+	echo "<br>SMTPfrom: " .$setup->set_smtp_from_address;
+	echo "<br>SMTPfnam: " .$setup->set_smtp_from_name;
+
+	$content = "<H1>Test Email Settings</h1>";
+	$subject = "Test Email Settings";
+
+	require_once("phpmailer/class.phpmailer.php");
+
+	$mail                    = new PHPMailer();
+	$mail->IsSMTP();
+	$mail->Host              = $setup->set_smtp_host;
+	$mail->Port              = $setup->set_smtp_port;
+	$mail->SMTPSecure        = $setup->set_smtp_use_ssl ? 'ssl' : '';
+	$mail->SMTPAuth          = $setup->set_smtp_use_ssl;
+
+	if ($setup->set_smtp_use_ssl) {
+		$mail->Username  = $setup->set_smtp_username;
+		$mail->Password  = $setup->set_smtp_password;
+	}
+
+	$mail->From              = $setup->set_smtp_from_address;
+	$mail->FromName          = $setup->set_smtp_from_name;
+
+	$mail->AddAddress($setup->set_smtp_from_address,$setup->set_smtp_from_name);
+	$mail->AddReplyTo($setup->set_smtp_from_address,$setup->set_smtp_from_name);
+
+	$mail->AddReplyTo        = $setup->set_smtp_from_address;
+	$mail->AddAddress        = $setup->set_smtp_from_address;
+	$mail->WordWrap          = 80;
+	$mail->IsHTML(true);
+	$mail->Subject           = $subject;
+	$mail->Body              = $content;
+
+	echo "<br><br>PhpMailer Says:<br>================<br><br>";
+
+	if(!$mail->Send()) {
+		echo "Error sending: " . $mail->ErrorInfo;;
+	} else {
+		echo "Test sent";
+	} 
+
+}
+	
+echo "</pre>";

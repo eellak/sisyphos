@@ -1,0 +1,16 @@
+function nuGetPost($Field_Name) {
+    $form_post = $_POST['nuWindow']['form_data']['data'][0]['records'][0]['fields'];
+    for ($x = 0; $x < count($form_post); $x++) {
+       if ( $form_post[$x]['field'] == $Field_Name ) {
+           return $form_post[$x]['value'];
+       }
+    }
+    return null;
+}
+
+$user = nuGetPost('sus_login_name');
+$pass = nuGetPost('nupassword');
+if($pass != '') {
+	$sql = "UPDATE zzzsys_user SET sus_login_password = md5(CONCAT('$user', '$pass')) WHERE zzzsys_user_id = '#RECORD_ID#'";
+	nuRunQuery($sql);
+}

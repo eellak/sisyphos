@@ -1,0 +1,42 @@
+$s = nuGetJSONSubform('fast_form_subform');
+$j = json_decode($s);
+
+for($i = 0 ; $i-1 < count($j) ; $i++){                                            //-- loop through JSON
+    
+    if($j[$i]->nuDelete == '1' and $j[$i]->nuPrimaryKey != ''){
+        nuRemoveFastField($j[$i]->nuPrimaryKey);
+    }    
+}
+
+
+
+function nuRemoveFastField($i){
+    
+    $s = "
+        SELECT * 
+        FROM zzzsys_object
+        WHERE zzzsys_object_id = '$i'
+    ";
+    
+    $t = nuRunQuery($s);
+    $o = db_fetch_object($t);
+    
+    $s = "
+        SELECT * 
+        FROM zzzsys_form
+        WHERE zzzsys_form_id = '$o->sob_zzzsys_form_id'
+    ";
+    
+    $t = nuRunQuery($s);
+    $f = db_fetch_object($t);
+    
+    $s = "
+        DELETE FROM zzzsys_browse
+        WHERE sbr_zzzsys_form_id = '$f->zzzsys_form_id'
+        AND sbr_display = '$o->sob_all_name'
+    ";
+
+    nuRunQuery($s);                                                             //-- remove Browse Column
+
+}
+

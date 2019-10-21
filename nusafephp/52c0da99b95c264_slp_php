@@ -1,0 +1,16 @@
+$h = "
+
+<html>
+<body style='background-color:lightgrey'>
+
+<form enctype='multipart/form-data' action='nuupload.php' method='POST'>
+     <input name='userfile' type='file' />
+    <input type='submit' value='Send File' />
+</form>
+
+</body>
+</html> 
+
+";
+
+print $h;

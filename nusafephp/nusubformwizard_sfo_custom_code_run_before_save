@@ -1,0 +1,176 @@
+function getProperties($attr) {
+    
+    $type   = 'text';
+    $height = '';
+    $width  = $attr[3];
+    $title  = $attr[4];
+    $lookup = $attr[5];
+    $lc     = $attr[6];
+    $ld     = $attr[7];
+    $align  = 'l';
+    $format = '';
+    
+    switch ($attr[1]) {
+        case 'date':
+            $format = '6';
+            break;
+        case 'int':
+            $align  = 'r';
+            $format = '0';
+            break;
+        case 'double':
+            $align = 'r';
+            if($attr[2] <= 5) {
+                $format = $attr[2];
+            }
+            else {
+                $format = '5';
+            }
+            break;
+        case 'decimal':
+            $align = 'r';
+            if($attr[2] <= 5) {
+                $format = $attr[2];
+            }
+            else {
+                $format = '5';
+            }
+            break;
+        case 'text':
+            $type   = 'textarea';
+            $height = '150';
+            $width  = '250';
+            break;
+    } 
+      
+      
+    if( $lookup != '' ) {
+        $type = 'lookup';
+    }
+    
+    $values = array(
+        "align"   => $align,
+        "format"  => $format,
+        "width"   => $width,
+        "title"   => $title,
+        "height"  => $height,
+        "type"    => $type,
+        "lookup"  => $lookup,
+        "lc"      => $lc,
+        "ld"      => $ld
+    );
+    
+    return $values;
+}
+
+
+$subform = nuID();
+$form    = '#sfw_form_id#';
+$table   = '#sfw_table_name#';
+$primary = '#sfw_hidden_primary#';
+$foreign = '#sfw_foreign_key#';
+$type    = '#sfw_subform_type#';
+
+$sql     = "SELECT * FROM $table WHERE $foreign = '#".'RECORD_ID'."#'";
+
+$fields  = '#sfw_form_listbox#';
+$fieldarr  = explode('#nuSep#', $fields);
+
+if( $table === '' || $primary === '') {
+    nuDisplayError('A table needs to be chosen.');
+    return;
+}
+
+if( $fields === '' ) {
+    nuDisplayError('At least one field must be chosen.');
+    return;
+}
+
+if( $form === '' ) {
+    nuDisplayError('No form selected');
+    return;
+}
+
+if( $foreign === '' ) {
+    nuDisplayError('No foreign key selected');
+    return;
+}
+
+$fieldarr  = explode('#nuSep#', $fields);
+$allfields = array();
+
+foreach($fieldarr as $value) {
+    $allfields[] = explode('#nuSepr#', $value);
+}
+
+if( $type === '' ) {
+    $type = 'g';
+}
+else if( $type === 'f' ) {
+    $height = 50*count($fieldarr);
+}
+
+//build subform object
+$s = "
+    INSERT INTO zzzsys_object (zzzsys_object_id, sob_zzzsys_form_id, sob_all_access_key, sob_all_title, sob_all_name, sob_all_tab_title, sob_all_tab_number, sob_all_column_number, sob_all_order_number, sob_all_top, sob_all_left, sob_all_width, sob_all_height, sob_all_clone, sob_all_align, sob_all_no_blanks, sob_all_no_duplicates, sob_all_read_only, sob_all_type, sob_subform_table, sob_subform_primary_key, sob_subform_foreign_key, sob_subform_addable, sob_subform_deletable, sob_subform_type, sob_subform_sql, sob_subform_row_height) VALUES
+    ('$subform', '$form','', '".$table."_subform','".$table."_subform','Wizard', '12345','10','10','10', '10','900','300','1','l','0','0','0','subform','$table', '$primary', '$foreign','1','1','$type','".addslashes($sql)."', '20')
+";
+nuRunQuery($s);
+
+
+$s = "
+    INSERT INTO zzzsys_object (zzzsys_object_id, sob_zzzsys_form_id, sob_all_column_number, sob_all_name, sob_all_order_number, sob_all_tab_number, sob_all_tab_title, sob_all_title, sob_all_type, sob_all_width, sob_all_height, sob_all_align, sob_text_format, sob_all_no_blanks, sob_all_read_only, sob_all_no_duplicates, sob_all_clone, sob_lookup_code_field, sob_lookup_description_field, sob_lookup_zzzsys_form_id, sob_lookup_id_field, sob_lookup_code_width, sob_lookup_description_width) VALUES
+    
+";
+
+$o = 10;
+$c = 10;
+$hasTextArea = false;
+
+for( $idx = 0; $idx < count($allfields); $idx++ ) {
+    $prim  = nuID();
+    $field = $allfields[$idx];
+    $prop  = getProperties($field);
+    $form_id = '';
+    
+    if( $prop["lookup"] !== '' ) {
+        $sq = "SELECT sfo_primary_key FROM zzzsys_form WHERE zzzsys_form_id = ?";
+        
+        $qry = nuRunQuery($sq, array($prop["lookup"]));
+        $res = db_fetch_object($qry);
+        $form_id = $res->sfo_primary_key;
+    }
+    if( $prop["type"] == 'textarea' and $type == 'g' and !$hasTextArea) {
+        $sq = "UPDATE zzzsys_object SET sob_subform_row_height='175' WHERE zzzsys_object_id = '$subform'";
+        nuRunQuery($sq);
+        $hasTextArea = true;
+    }
+    
+    $s .= "( '$prim', '$subform', '$c', '".$field[0]."', '$o', '10', 'Details', '".$prop['title']."', '".$prop['type']."', '".$prop['width']."','".$prop['height']."',  '".$prop['align']."', '".$prop['format']."', '0','0','0','1', '".$prop["lc"]."', '".$prop["ld"]."', '".$prop["lookup"]."', '".$form_id."', '100', '250'), ";
+    
+    $o = $o + 10;
+    if( $o >= 150 ) {
+        $o = 10;
+        $c = $c + 10;
+    }
+}
+$s = rtrim($s, ', ');
+nuRunQuery($s);
+nuRunQuery("UPDATE zzzsys_object SET sob_all_top = '0' WHERE sob_all_top IS NULL;");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_left = '0' WHERE sob_all_left IS NULL;");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_clone = '0' WHERE sob_all_clone IS NULL;");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_align = '0' WHERE sob_all_align IS NULL;");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_no_blanks = '0' WHERE sob_all_no_blanks IS NULL;");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_read_only = '0' WHERE sob_all_read_only IS NULL;");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_align = 'l' WHERE sob_all_align IS NULL;");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_no_duplicates = '0' WHERE sob_all_no_duplicates IS NULL;");
+
+nuRunQuery("UPDATE zzzsys_object SET sob_all_top = '0' WHERE sob_all_top = '';");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_left = '0' WHERE sob_all_left = '';");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_clone = '0' WHERE sob_all_clone = '';");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_align = '0' WHERE sob_all_align = '';");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_no_blanks = '0' WHERE sob_all_no_blanks = '';");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_read_only = '0' WHERE sob_all_read_only = '';");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_align = 'l' WHERE sob_all_align = '';");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_no_duplicates = '0' WHERE sob_all_no_duplicates = '';");
+

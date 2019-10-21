@@ -1,0 +1,183 @@
+function getProperties($attr) {
+    $type               = 'text';
+    $height             = '';
+    $width              = $attr[3];
+    $title              = $attr[4];
+    $lookup             = $attr[5];
+    $lookup_code        = $attr[6];
+    $lookup_description = $attr[7];
+    $align              = 'l';
+    $format             = '';
+    
+    switch ($attr[1]) {
+        case 'date':
+            $format = '6';
+            break;
+        case 'int':
+            $align  = 'r';
+            $format = '0';
+            break;
+        case 'double':
+            $align = 'r';
+            if($attr[2] <= 5) {
+                $format = $attr[2];
+            }
+            else {
+                $format = '5';
+            }
+            break;
+        case 'decimal':
+            $align = 'r';
+            if($attr[2] <= 5) {
+                $format = $attr[2];
+            }
+            else {
+                $format = '5';
+            }
+            break;
+        case 'text':
+            $type   = 'textarea';
+            $height = '150';
+            $width  = '250';
+            break;
+    } 
+    if( $lookup !== '' ) {
+        $type = 'lookup';
+    }
+      
+    $values = array(
+        "align"              => $align,
+        "format"             => $format,
+        "width"              => $width,
+        "title"              => $title,
+        "height"             => $height,
+        "type"               => $type,
+        "lookup"             => $lookup,
+        "lookup_code"        => $lookup_code,
+        "lookup_description" => $lookup_description
+    );
+    return $values;
+}
+
+
+$form    = nuID();
+$sql     = "SELECT * FROM #fw_table_name#";
+$table   = '#fw_table_name#';
+$primary = '#fw_hidden_primary#';
+$columns = array();
+$browse  = '#fw_browse_listbox#';
+$fields  = '#fw_form_listbox#';
+
+if( $table === '') {
+    nuDisplayError('A table needs to be chosen.');
+    return;
+}
+
+if( $primary === '') {
+    nuDisplayError("Form Wizard can't detect Primary Key on selected table.");
+    return;
+}
+
+if( $browse === '' && $fields === '' ) {
+    nuDisplayError('No fields chosen to display');
+    return;
+}
+
+$s = "
+    INSERT INTO zzzsys_form (zzzsys_form_id, sfo_name, sfo_sql, sfo_table, sfo_primary_key, sfo_title,sfo_add_button, sfo_save_button, sfo_delete_button)
+    VALUES ('$form','$table','$sql','$table','$primary', '$table', '1', '1', '1');
+";
+
+nuRunQuery($s);
+    
+if($browse !== '' ) {
+    $browse = explode('#nuSep#',$browse );
+    foreach( $browse as $value ) {
+        $columns[] = explode('#nuSepr#',$value);
+    }
+
+    $order = 10;
+    $s = "INSERT INTO zzzsys_browse (zzzsys_browse_id, sbr_zzzsys_form_id, sbr_title, sbr_display, sbr_align, sbr_format,sbr_searchable, sbr_sort, sbr_visible, sbr_order, sbr_width) VALUES ";
+
+    for($idx = 0; $idx < count($columns); $idx++) {
+        $id     = nuID();
+        $column = $columns[$idx];
+        $prop   = getProperties($column);
+     
+        $s .= "('$id', '$form', '".$prop['title']."', '".$column[0]."', '".$prop['align']."', '".$prop['format']."', 1, '".$column[0]."', '', '$order', '".$prop['width']."'), ";
+        
+        $order +=10;   
+    }
+    $s = rtrim($s, ', ');
+    nuRunQuery($s);
+}
+
+if( $fields !== '' ) {
+    $fieldarr  = explode('#nuSep#', $fields);
+    $allfields = array();
+
+    foreach($fieldarr as $value) {
+        $allfields[] = explode('#nuSepr#', $value);
+    }
+
+    $sql = "
+        INSERT INTO zzzsys_object (zzzsys_object_id, sob_zzzsys_form_id, sob_all_column_number, sob_all_name, sob_all_order_number, sob_all_tab_number, sob_all_tab_title, sob_all_title, sob_all_type, sob_all_width, sob_all_height, sob_all_align, sob_text_format, sob_all_no_blanks, sob_all_read_only, sob_all_no_duplicates, sob_all_clone, sob_lookup_code_field, sob_lookup_description_field, sob_lookup_zzzsys_form_id, sob_lookup_id_field, sob_lookup_code_width, sob_lookup_description_width) VALUES
+    ";
+
+    $o = 10;
+    $c = 10;
+
+    for( $idx = 0; $idx < count($allfields); $idx++ ) {
+        $prim  = nuID();
+        $field = $allfields[$idx];
+        $prop  = getProperties($field);
+        $form_id = '';
+        
+        if( $prop["lookup"] !== '' ) {
+            $s = "SELECT sfo_primary_key FROM zzzsys_form WHERE zzzsys_form_id = ?";
+            
+            $qry = nuRunQuery($s, array($prop["lookup"]));
+            $res = db_fetch_object($qry);
+            $form_id = $res->sfo_primary_key;
+        }
+        
+        $sql .= "( '$prim', '$form', '$c', '".$field[0]."', '$o', '10', 'Details', '".$prop['title']."', '".$prop['type']."', '".$prop['width']."','".$prop['height']."',  '".$prop['align']."', '".$prop['format']."', '0','0','0','1', '".$prop["lookup_code"]."', '".$prop["lookup_description"]."', '".$prop["lookup"]."', '".$form_id."', '100', '250'), ";
+        
+        $o = $o + 10;
+        if( $o >= 150 ) {
+            $o = 10;
+            $c = $c + 10;
+        }
+    }
+    $sql = rtrim($sql, ', ');
+    nuRunQuery($sql);
+}
+$primary = nuID();
+$field   = $table.'btn';
+$record  = ($browse == '') ? '-1' : '';
+
+$sql     = "
+    INSERT INTO zzzsys_object (zzzsys_object_id, sob_zzzsys_form_id, sob_button_zzzsys_form_id,sob_button_browse_filter,sob_button_skip_browse_record_id, sob_all_column_number, sob_all_name, sob_all_order_number, sob_all_tab_number, sob_all_tab_title, sob_all_title, sob_all_type, sob_all_width, sob_all_height, sob_all_align, sob_text_format, sob_all_no_blanks, sob_all_read_only, sob_all_no_duplicates, sob_all_clone) 
+    VALUES ('$primary', 'nuhome', '$form','','$record', '10', '$field', '10', '1051', 'Wizard', '$table', 'button', '120', '30', 'l', '', '0', '0', '0', '0')
+";
+
+nuRunQuery($sql);
+
+nuRunQuery("UPDATE zzzsys_object SET sob_all_top = '0' WHERE sob_all_top IS NULL;");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_left = '0' WHERE sob_all_left IS NULL;");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_clone = '0' WHERE sob_all_clone IS NULL;");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_align = '0' WHERE sob_all_align IS NULL;");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_no_blanks = '0' WHERE sob_all_no_blanks IS NULL;");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_read_only = '0' WHERE sob_all_read_only IS NULL;");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_align = 'l' WHERE sob_all_align IS NULL;");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_no_duplicates = '0' WHERE sob_all_no_duplicates IS NULL;");
+
+nuRunQuery("UPDATE zzzsys_object SET sob_all_top = '0' WHERE sob_all_top = '';");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_left = '0' WHERE sob_all_left = '';");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_clone = '0' WHERE sob_all_clone = '';");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_align = '0' WHERE sob_all_align = '';");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_no_blanks = '0' WHERE sob_all_no_blanks = '';");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_read_only = '0' WHERE sob_all_read_only = '';");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_align = 'l' WHERE sob_all_align = '';");
+nuRunQuery("UPDATE zzzsys_object SET sob_all_no_duplicates = '0' WHERE sob_all_no_duplicates = '';");
+

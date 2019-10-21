@@ -1,0 +1,208 @@
+$f        = '#sob_zzzsys_form_id#';
+$n        = '#sob_all_name#';
+$id       = '#RECORD_ID#';
+$iscloned = '#nu_cloned_record#';
+$s        = "SELECT zzzsys_object_id, sob_all_type, sob_all_name FROM zzzsys_object WHERE sob_zzzsys_form_id = ? AND sob_all_name = ? ";
+
+if( $iscloned == 0 ) {
+    $s   .= "AND zzzsys_object_id != ? ";
+    $t    = nuRunQuery($s, array($f, $n, $id));
+}else{
+    $t    = nuRunQuery($s, array($f, $n));
+}
+$r        = db_fetch_object($t);
+if($r->zzzsys_object_id != ''){
+
+        $MESS = "There is already an Object with the Field Name $r->sob_all_name"; 
+        nuDisplayError($MESS);
+}
+
+if( preg_match('/[[:blank:]]/', $n) === 1 ) {
+    $MESS = "Field name cannot contain space characters";
+    nuDisplayError($MESS);
+}
+
+if('#sob_all_type#' == 'iframe'){
+
+    if('#sob_iframe_zzzsys_php_id#' == '' and '#sob_iframe_zzzsys_report_id#' == ''){
+
+        $MESS = "Both PHP to Run and Report to Run cannot be left blank..  (TAB : iFrame)"; 
+        nuDisplayError($MESS);
+    }
+
+}
+
+if('#sob_all_type#' == 'browse'){
+    if('#sob_browse_zzzsys_form_id#' == ''){
+
+        $MESS = "Browse cannot be left blank..  (TAB : Browse)"; 
+        nuDisplayError($MESS);
+    }
+
+    if('#sob_all_width#' == '' or '#sob_all_width#' == '0'){
+
+        $MESS = "Width must be over zero..  (TAB : All)"; 
+        nuDisplayError($MESS);
+    }
+    
+}
+
+
+if('#sob_all_type#' == 'button'){
+
+    if('#sob_all_width#' == '' or '#sob_all_width#' == '0'){
+
+        $MESS = "Width must be over zero..  (TAB : All)"; 
+        nuDisplayError($MESS);
+    }
+
+}
+
+if('#sob_all_type#' == 'display'){
+
+    if('#sob_all_width#' == '' or '#sob_all_width#' == '0'){
+
+        $MESS = "Width must be over zero..  (TAB : All)"; 
+        nuDisplayError($MESS);
+    }
+
+    if('#sob_display_sql#' == ''){
+
+        $MESS = "SQL cannot be left blank..  (TAB : Display)"; 
+        nuDisplayError($MESS);
+    }
+
+}
+
+if('#sob_all_type#' == 'dropdown'){
+
+    if('#sob_all_width#' == '' or '#sob_all_width#' == '0'){
+
+        $MESS = "Width must be over zero..  (TAB : All)"; 
+        nuDisplayError($MESS);
+
+    }
+    if('#sob_dropdown_sql#' == ''){
+
+        $MESS = "SQL cannot be left blank..  (TAB : Dropdown)"; 
+        nuDisplayError($MESS);
+
+    }
+}
+
+if('#sob_all_type#' == 'html'){
+
+    if('#sob_all_width#' == '' or '#sob_all_width#' == '0'){
+
+        $MESS = "Width must be over zero..  (TAB : All)"; 
+        nuDisplayError($MESS);
+
+    }
+
+
+    if('#sob_html_code#' == ''){
+
+        $MESS = "HTML cannot be left blank..  (TAB : HTML)"; 
+        nuDisplayError($MESS);
+
+    }
+
+}
+
+
+if('#sob_all_type#' == 'listbox'){
+
+    if('#sob_all_width#' == '' or '#sob_all_width#' == '0'){
+
+        $MESS = "Width must be over zero..  (TAB : All)"; 
+        nuDisplayError($MESS);
+
+    }
+
+    if('#sob_listbox_sql#' == ''){
+
+        $MESS = "SQL cannot be left blank..  (TAB : Listbox)"; 
+        nuDisplayError($MESS);
+
+    }
+
+}
+if('#sob_all_type#' == 'lookup'){
+
+    if('#sob_lookup_id_field#' == ''){
+
+        $MESS = "ID Field cannot be left blank..  (TAB : Lookup)"; 
+        nuDisplayError($MESS);
+
+    }
+
+    if('#sob_lookup_code_field#' == ''){
+
+        $MESS = "Code Field cannot be left blank..  (TAB : Lookup)"; 
+        nuDisplayError($MESS);
+
+    }
+
+    if('#sob_lookup_description_field#' == ''){
+
+        $MESS = "Description Field cannot be left blank..  (TAB : Lookup)"; 
+        nuDisplayError($MESS);
+
+    }
+
+    if('#codesob_lookup_zzzsys_form_id#' == ''){
+
+        $MESS = "Form to Lookup cannot be left blank..  (TAB : Lookup)"; 
+        nuDisplayError($MESS);
+
+    }
+
+    if('#sob_lookup_code_width#' == '' or '#sob_lookup_code_width#' == '0'){
+
+        $MESS = "Code Width must be over zero..  (TAB : Lookup)"; 
+        nuDisplayError($MESS);
+
+    }
+
+}
+if('#sob_all_type#' == 'subform'){
+
+    if('#sob_all_width#' == '' or '#sob_all_width#' == '0'){
+
+        $MESS = "Width must be over zero..  (TAB : All)"; 
+        nuDisplayError($MESS);
+
+    }
+
+
+}
+if('#sob_all_type#' == 'text'){
+
+    if('#sob_all_width#' == '' or '#sob_all_width#' == '0'){
+
+        $MESS = "Width must be over zero..  (TAB : All)"; 
+        //nuDisplayError($MESS);
+
+    }
+
+}
+if('#sob_all_type#' == 'textarea'){
+
+    if('#sob_all_width#' == '' or '#sob_all_width#' == '0'){
+
+        $MESS = "Width must be over zero..  (TAB : All)"; 
+        nuDisplayError($MESS);
+
+    }
+
+}
+if('#sob_all_type#' == 'words'){
+
+    if('#sob_all_width#' == '' or '#sob_all_width#' == '0'){
+
+        $MESS = "Width must be over zero..  (TAB : All)"; 
+        nuDisplayError($MESS);
+
+    }
+
+}

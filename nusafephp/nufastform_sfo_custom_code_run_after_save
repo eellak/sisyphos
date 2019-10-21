@@ -1,0 +1,470 @@
+$GLOBALS['nuObjectOrder']      = 100;
+
+
+$a  = array();
+$t  = nuRunQuery("SELECT * FROM zzzsys_form WHERE zzzsys_form_id = '#RECORD_ID#'");
+$FO = db_fetch_object($t);
+
+if($FO->sfo_table == ''){                                                        //-- add a new form and table
+
+    $FO->sfo_table = nuFastFormForm($FO);
+
+}
+
+$s = "
+    SELECT * 
+    FROM zzzsys_object 
+    WHERE sob_zzzsys_form_id = '$FO->zzzsys_form_id'
+    ORDER BY sob_all_name DESC, zzzsys_object_id
+";
+
+$t = nuRunQuery($s);
+
+while($OO = db_fetch_object($t)){
+    
+    if($OO->sob_all_name == ''){
+    
+        $OO->sob_all_name  = nuGetUniqueName($OO->sob_all_title, $a);
+        nuAddFastFormObject($FO, $OO);
+        
+    }
+        
+    $a[] = $OO->sob_all_name;
+    
+    $GLOBALS['nuObjectOrder'] = $GLOBALS['nuObjectOrder'] + 1;
+    
+}
+
+$s = "
+    DELETE FROM zzzsys_object
+    WHERE IFNULL(sob_all_name,'') = '' 
+    AND IFNULL(sob_all_type,'') = ''
+";
+
+nuRunQuery($s);
+
+
+
+//--------------------------------- Functions-----------------------------------
+
+function nuAddFastFormObject($FO, $OO){                                //-- Add Form Object and Browse Column
+
+    $bid = nuID();
+
+    $d   = $FO->sfo_table.'_id';
+    $ord = $GLOBALS['nuObjectOrder'];
+    $tit = nuValidTitle($OO->sob_all_title);
+
+    $s   = "
+    
+        UPDATE zzzsys_object
+        SET 
+        sob_all_name = '$OO->sob_all_name',
+        sob_all_tab_title = 'Main',
+        sob_all_tab_number = '10',
+        sob_all_column_number = '10',
+        sob_all_order_number = '$ord',
+        sob_all_clone = '1',
+        sob_all_align = 'l',
+        sob_all_no_blanks = '0',
+        sob_all_read_only = '0',
+        sob_all_no_duplicates = '0',
+        sob_all_left = '0',
+        sob_all_top = '0'
+        WHERE zzzsys_object_id = '$OO->zzzsys_object_id'
+
+    ";
+
+    nuRunQuery($s);                                                             //-- add Object
+
+    $s   = "
+    
+    	INSERT INTO zzzsys_browse
+    	(
+    	zzzsys_browse_id,
+    	sbr_zzzsys_form_id,
+    	sbr_title,
+    	sbr_display,
+    	sbr_sort,
+    	sbr_align,
+    	sbr_order,
+    	sbr_width
+    	)
+    	VALUES
+    	(
+    	'$bid',
+    	'$FO->zzzsys_form_id',
+    	'$tit',
+    	'$OO->sob_all_name',
+    	'$OO->sob_all_name',
+    	'l',
+    	'$ord',
+    	150
+    	)
+	
+    ";
+    
+    nuRunQuery($s);                                                             //-- add Browse
+
+    nuUpdateObject($bid, $OO, $FO);
+    
+}
+
+
+
+function nuUpdateObject($bid, $OO, $FO){
+
+    $t = 40;
+
+    if($OO->sob_all_type == 'Text'){
+    
+        $osql = "sob_all_type = 'text', sob_all_width = 200";
+        $bsql = "sbr_align = 'l'";
+        $asql = "ADD $OO->sob_all_name VARCHAR(300) NOT NULL";
+        
+	}
+    if($OO->sob_all_type == 'Date'){
+    
+        $osql = "sob_all_type = 'text', sob_all_width = 90, sob_text_format = '6'";
+        $bsql = "sbr_align = 'l', sbr_format = '6'";
+        $asql = "ADD $OO->sob_all_name DATE NOT NULL";
+        
+	}
+    if($OO->sob_all_type == 'Number'){
+    
+        $osql = "sob_all_type = 'text', sob_all_width = 80, sob_text_format = '2', sob_all_align = 'r'";
+        $bsql = "sbr_align = 'r', sbr_format = '2'";
+        $asql = "ADD $OO->sob_all_name DECIMAL(12,2) NOT NULL";
+        
+	}
+    if($OO->sob_all_type == 'Auto Number'){
+    
+        $auto = 'auto_' . $OO->zzzsys_object_id . '_' . $FO->sfo_table ;
+        $osql = "sob_all_type = 'text', sob_all_width = 60, sob_all_align = 'r', sob_all_read_only = '1', sob_all_default_value_sql = '#$auto#'";
+        $bsql = "sbr_align = 'r'";
+        $asql = "ADD $OO->sob_all_name INT NOT NULL";
+        
+        $atab = "
+                CREATE TABLE $auto (
+                id int(11) NOT NULL AUTO_INCREMENT,
+                extra_field varchar(25) NOT NULL,
+                PRIMARY KEY (id),
+                KEY extra_field (extra_field)
+                )
+        ";
+        
+        nuRunQuery($atab);
+        
+	}
+    if($OO->sob_all_type == 'Password'){
+    
+        $osql = "sob_all_type = 'text', sob_all_width = 100, sob_text_type = 'password'";
+        $bsql = "";
+        $asql = "ADD $OO->sob_all_name VARCHAR(300) NOT NULL";
+        $s = "DELETE FROM zzzsys_browse WHERE zzzsys_browse_id = '$bid'";
+        nuRunQuery($s);
+        
+	}
+   if($OO->sob_all_type == 'Checkbox'){
+    
+        $osql = "sob_all_type = 'checkbox', sob_all_width = 10";
+        $bsql = "sbr_display = '$OO->sob_all_name', sbr_sort = '$OO->sob_all_name'";
+        $asql = "ADD $OO->sob_all_name VARCHAR(1) NOT NULL";
+        
+	}
+    if($OO->sob_all_type == 'Text Area'){
+    
+        $osql = "sob_all_type = 'textarea', sob_all_height = 200, sob_all_width = 200";
+        $bsql = "sbr_align = 'l'";
+        $asql = "ADD $OO->sob_all_name TEXT NOT NULL";
+        
+	}
+    if($OO->sob_all_type == 'Drop Down'){
+    
+        $osql = "sob_all_type = 'dropdown', sob_all_width = 50, sob_dropdown_sql = '0|No|1|Yes'";
+        $bsql = "sbr_display = '$OO->sob_all_name', sbr_sort = '$OO->sob_all_name'";
+        $asql = "ADD $OO->sob_all_name VARCHAR(300) NOT NULL";
+        
+	}
+    if($OO->sob_all_type == 'Listbox'){
+    
+        $LBN = 'listbox_' . $OO->zzzsys_object_id . '_' . $OO->sob_all_name;
+
+        $s    = "
+                CREATE TABLE $LBN (
+                id VARCHAR(25) NOT NULL, 
+                choice VARCHAR(200) NOT NULL, 
+                PRIMARY KEY (id)
+                )
+                 ENGINE = MyISAM;
+                ";
+                
+        nuRunQuery($s);
+        
+    
+        $s    = "
+                INSERT INTO $LBN
+                (id, choice) 
+                VALUES 
+                ('1', 'Choice 1'), ('2', 'Choice 2'), ('3', 'Choice 3');
+                ";
+                
+        nuRunQuery($s);
+        
+
+        $osql = "sob_all_type = 'listbox', sob_all_width = 200, sob_all_height = 70, sob_listbox_sql = 'SELECT id, choice FROM $LBN'";
+        $asql = "ADD $OO->sob_all_name TEXT NOT NULL";
+        $s = "DELETE FROM zzzsys_browse WHERE zzzsys_browse_id = '$bid'";
+        nuRunQuery($s);
+        
+	}
+    if($OO->sob_all_type == 'Word'){
+    
+        $osql = "sob_all_type = 'words', sob_all_width = 200";
+        $bsql = "";
+        $asql = "";
+        $s = "DELETE FROM zzzsys_browse WHERE zzzsys_browse_id = '$bid'";
+        nuRunQuery($s);
+        
+	}
+    if($OO->sob_all_type == 'Display'){
+    
+        $osql = "sob_all_type = 'display', sob_all_width = 200, sob_display_sql = 'SELECT CURDATE()'";
+        $bsql = "";
+        $asql = "";
+        $s = "DELETE FROM zzzsys_browse WHERE zzzsys_browse_id = '$bid'";
+        nuRunQuery($s);
+        
+	}
+    if($OO->sob_all_type == 'HTML'){
+    
+        $osql = "sob_all_type = 'html', sob_all_width = 200, sob_all_height = 200, sob_html_code = '<div style=\"background-color:lightblue;height:200px;width:200px\">Hello World</div>'";
+        $bsql = "";
+        $asql = "";
+        $s = "DELETE FROM zzzsys_browse WHERE zzzsys_browse_id = '$bid'";
+        nuRunQuery($s);
+        
+	}
+    if($OO->sob_all_type == 'Hidden Field'){
+    
+        $osql = "sob_all_type = 'text', sob_all_display_condition = 'SELECT 0'";
+        $bsql = "";
+        $asql = "ADD $OO->sob_all_name VARCHAR(300) NOT NULL";
+        $s = "DELETE FROM zzzsys_browse WHERE zzzsys_browse_id = '$bid'";
+        nuRunQuery($s);
+        
+	}
+    if($OO->sob_all_type == 'Javascript Button'){
+    
+        $osql = "sob_all_type = 'button', sob_all_height = 30, sob_all_width = 200";
+        $bsql = "";
+        $asql = "";
+        $s = "DELETE FROM zzzsys_browse WHERE zzzsys_browse_id = '$bid'";
+        nuRunQuery($s);
+
+        $eid = nuID();
+        $s = "INSERT INTO zzzsys_event (zzzsys_event_id, sev_zzzsys_object_id, sev_name, sev_javascript) VALUES ('$eid','$OO->zzzsys_object_id','onclick','alert(123);')";
+        nuRunQuery($s);
+        
+	}
+    if($OO->sob_all_type == 'Open Form Button'){
+    
+        $osql = "sob_all_type = 'button', sob_all_height = 30, sob_all_width = 200, sob_button_zzzsys_form_id = 'nudebug'";
+        $bsql = "";
+        $asql = "";
+        $s = "DELETE FROM zzzsys_browse WHERE zzzsys_browse_id = '$bid'";
+        nuRunQuery($s);
+
+	}
+
+    if($osql != ''){
+        
+        $s = "UPDATE zzzsys_object SET $osql WHERE zzzsys_object_id = '$OO->zzzsys_object_id' ";
+        nuRunQuery($s);
+
+    }
+    
+    if($bsql != ''){
+        
+        $s = "UPDATE zzzsys_browse SET $bsql WHERE zzzsys_browse_id = '$bid'";
+        nuRunQuery($s);
+
+    }    
+    
+    if($asql != ''){
+        
+        $s = "ALTER TABLE $FO->sfo_table $asql";
+        nuRunQuery($s);
+
+    }    
+}
+
+
+function nuFastFormForm($FO){
+
+    $t   = nuRunQuery("SELECT COUNT(*) FROM zzzsys_form");
+    $r   = db_fetch_row($t);
+    $n   = $r[0];
+    $tn  = nuGetTableName();
+    $p   = $tn . '_id';
+    $b   = nuID();
+    $a   = nuID();
+
+    $s   = "
+    
+        UPDATE zzzsys_form
+        SET
+        sfo_name = 'FF$n', 
+        sfo_sql = 'SELECT * FROM $tn', 
+        sfo_table = '$tn', 
+        sfo_primary_key = '$p', 
+        sfo_add_button = '1', 
+        sfo_save_button = '1', 
+        sfo_delete_button = '1', 
+        sfo_clone_button = '1', 
+        sfo_print_button = '1'
+        WHERE zzzsys_form_id = '$FO->zzzsys_form_id'
+        
+    ";
+
+    nuRunQuery($s);                                                                             //-- create new form
+
+    $s   = "
+    
+        INSERT INTO zzzsys_object
+        (
+        zzzsys_object_id, 
+        sob_zzzsys_form_id,
+        sob_all_name,
+        sob_all_type,
+        sob_all_title,
+        sob_all_tab_title,
+        sob_all_tab_number,
+        sob_all_column_number,
+        sob_all_order_number,
+        sob_all_clone,
+        sob_all_align,
+        sob_all_no_blanks,
+        sob_all_read_only,
+        sob_all_no_duplicates,
+        sob_all_width,
+        sob_all_height,
+        sob_button_zzzsys_form_id
+        ) 
+        VALUES 
+        (
+        '$b', 
+        'nuhome', 
+        'btn$tn', 
+        'button',
+        '$FO->sfo_title',
+        'Home',
+        '10',
+        '10',
+        '10',
+        '1',
+        'l',
+        '0',
+        '0',
+        '0',
+        '200',
+        '30',
+        '$FO->zzzsys_form_id'
+        )
+
+    ";
+
+    nuRunQuery($s);                                                             //-- add Form to Fast Form Access Level
+
+    $s   = "
+
+        INSERT INTO zzzsys_access_level_form 
+        (
+        zzzsys_access_level_form_id, 
+        slf_zzzsys_access_level_id, 
+        slf_zzzsys_form_id 
+        ) 
+        VALUES
+        (
+        '$a', 
+        'nufastformlevel', 
+        '$FO->zzzsys_form_id'
+        );
+
+    ";
+
+    nuRunQuery($s);                                                             //-- add Button to Home
+    
+    
+    $s = "CREATE TABLE $tn ($p VARCHAR(25) NOT NULL, PRIMARY KEY ($p)) ENGINE = MyISAM";
+
+    nuRunQuery($s); //-- create new table
+
+    return $tn;        
+    
+}
+
+function nuGetTableName(){
+
+    $n = '#sfo_title#';
+    
+    $s = "
+    
+	SELECT TABLE_NAME
+	FROM INFORMATION_SCHEMA.TABLES
+	WHERE TABLE_SCHEMA = '$db'
+	GROUP BY TABLE_NAME
+    
+    ";
+    
+    $t = nuRunQuery($s);
+    $a = array();
+    
+    while($r = db_fetch_row($t)){
+        $a[] = $r[0];
+    }
+
+    return nuGetUniqueName($n, $a);
+
+}
+
+function nuValidName($n){
+    
+    $v = preg_replace("/[^0-9a-zA-Z _]/", "", $n);
+    
+    return str_replace(' ', '_', strtolower($v));
+}
+
+
+function nuValidTitle($n){
+    
+    return trim(preg_replace("/[^0-9a-zA-Z _]/", "", $n));
+    
+}
+
+
+function nuGetUniqueName($name, $a){
+
+    $n = nuValidName($name);
+    
+    $c = '';
+    
+    while(true){
+
+
+        if(array_search($n . $c, $a) == ''){
+            return $n . $c;
+        }else{
+  
+            if($c == ''){
+                $c = 1;
+            }else{
+                $c = $c + 1;
+            }
+
+       }
+       
+    }
+
+}
+

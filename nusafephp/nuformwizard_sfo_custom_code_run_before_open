@@ -1,0 +1,19 @@
+$sql = "
+SELECT TABLE_NAME, COLUMN_NAME, COLUMN_KEY, DATA_TYPE, NUMERIC_SCALE, NUMERIC_PRECISION, CHARACTER_MAXIMUM_LENGTH
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_SCHEMA = database()
+";
+
+$js = "function fetch_columns() {window.columns = [";
+
+$q = nuRunQuery($sql);
+
+$r = db_fetch_array($q);
+
+$js .= "[\"" . $r[0] . "\" , \"" . $r[1] . "\" , \"" . $r[2] . "\" , \"" . $r[3] . "\" , \"" . $r[4] . "\" , \"" . $r[5]. "\" , \"" . $r[6] . "\"]";
+while($r = db_fetch_array($q)) {
+    $js .= ",[\"" . $r[0] . "\" , \"" . $r[1] . "\" , \"" . $r[2] . "\" , \"" . $r[3] . "\" , \"" . $r[4] . "\" , \"" . $r[5]. "\" , \"" . $r[6]. "\"]";
+}
+$js .= "];}";
+
+nuAddJavascript($js);

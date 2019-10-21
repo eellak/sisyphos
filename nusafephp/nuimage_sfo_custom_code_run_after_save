@@ -1,0 +1,31 @@
+
+$J           = json_decode("#FILES#");
+
+if($J[0]->name == ''){return;}
+
+$dt          = new DateTime();
+$date        = $dt->format('Y-m-d H:i:s');
+
+$name        = $J[0]->name;
+$type        = $J[0]->type;
+$size        = $J[0]->size;
+
+$uploaddir   = sys_get_temp_dir();
+$contents    = file_get_contents($uploaddir . '/' . $J[0]->name);
+$contents    = addslashes($contents);
+
+$s           = "
+UPDATE zzzsys_file 
+SET 
+sfi_blob                   = '$contents',  
+sfi_name                   = '$name',  
+sfi_type                   = '$type',  
+sfi_size                   = '$size', 
+zzzsys_file_log_changed_at = '$date'
+
+WHERE zzzsys_file_id       = '#RECORD_ID#'
+";
+
+nuRunQuery($s);
+
+unlink('tmp/' . $J[0]->name);
