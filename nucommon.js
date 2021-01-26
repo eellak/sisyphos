@@ -1448,7 +1448,7 @@ function nuRunPHP(pCode, id, sync){
         url      : "nuapi.php",
         type     : "POST",
         data     : {nuWindow : P},
-        async    : false,
+        async    : sync,
         success  : function(data) {
 
                 var obj          = $.parseJSON(data.DATA);
@@ -1614,7 +1614,7 @@ function nuBuildForm(w){
                 type     : "POST",
                 data     : {nuWindow : w},
                 dataType : "json",
-                async    : false
+                async    : true
                 }).done(function(data){
                     window.loading = false;
                     if(nuErrorMessage(data.ERRORS, false)){hideTopLoader();nuRemoveModal();return;}
@@ -2016,9 +2016,10 @@ function nuMoveObject(id, top, left){
     });
 
     $('#' + t.id).append($('#tr_'+id));
-
-    $('#title_' + id).css( 'width', nuSetTitleWidth(id) + 'px');
-    
+	
+	if (window.top === window.self) {
+		$('#title_' + id).css( 'width', nuSetTitleWidth(id) + 'px');
+    }
 }
 
 
