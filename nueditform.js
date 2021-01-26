@@ -697,7 +697,7 @@ function nuRecordObjects(formType, formTop){
 		nuObjectSize(o,e,i,true);
         
         if(o[i].src == 'php'){
-            nuRunPHP(o[i].src_code, o[i].field);
+            nuRunPHP(o[i].src_code, o[i].field, false);
         }else{
             nuPrintPDF(o[i].src_code, o[i].field);
         }
