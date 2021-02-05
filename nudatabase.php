@@ -25,9 +25,8 @@ function db_setup(){
 		$setup 	= db_fetch_object($rs);
 	}
 	
-	$gcLifetime  = 60 * $setup->set_time_out_minutes;             //setup garbage collect timeouts
-	
-	@ini_set("session.gc_maxlifetime", $gcLifetime); // PHP7 @ added
+	//$gcLifetime  = 60 * $setup->set_time_out_minutes;             //setup garbage collect timeouts
+	//@ini_set("session.gc_maxlifetime", $gcLifetime); // PHP7 @ added
 		
     return $setup;
 }
