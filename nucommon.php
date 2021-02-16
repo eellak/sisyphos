@@ -27,7 +27,7 @@ $_SESSION['DBUser']                 = $nuConfigDBUser;
 $_SESSION['DBPassword']             = $nuConfigDBPassword;
 $_SESSION['DBGlobeadminPassword']   = $nuConfigDBGlobeadminPassword;
 $_SESSION['title']                  = $nuConfigtitle; 
-$_SESSION['IsDemo']                 = $nuConfigIsDemo; 
+$_SESSION['IsDemo']                 = (isset($nuConfigIsDemo) ? $nuConfigIsDemo : false); 
 $_SESSION['SafeMode']               = (isset($nuConfigSafeMode) ? $nuConfigSafeMode : false);
 $_SESSION['SafePHP']                = (isset($nuConfigSafePHP) ? $nuConfigSafePHP : array());
 	
