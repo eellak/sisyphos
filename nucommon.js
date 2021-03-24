@@ -246,8 +246,11 @@ function toggleModalMode(){   //-- login screen
             'left'             : '50%',
             'margin-left'      : '-210px',
             'position'         : 'absolute',
-            'background-color' : '#F0F0F0',
-            'border-radius'    : '5px'
+            'background-color' : '#faf4ed',
+            'border-radius'    : '5px',
+			'border-style'    : 'solid',
+			'border-color'    : '#CCC2B8',
+			'border-width'    : '1px'
         })
         .addClass( 'nuShadeHolder');
 
@@ -264,7 +267,7 @@ function toggleModalMode(){   //-- login screen
             'font-size'        : '25px',
             'font-family'      : 'sans-serif',
             'position'         : 'absolute',
-            'background-color' : '#F0F0F0'
+            'background-color' : '#faf4ed'
         })
         .html('<img src=\'sisyphos_logo.png\'/>');
 
@@ -281,7 +284,7 @@ function toggleModalMode(){   //-- login screen
             'font-family'      : 'sans-serif',
             'position'         : 'absolute',
 			'color'            : '#666666',
-            'background-color' : '#F0F0F0'
+            'background-color' : '#faf4ed'
 
         })
         .html(nuGetTitle());
@@ -293,7 +296,7 @@ function toggleModalMode(){   //-- login screen
             'top'              : '135px',
             'left'             : '30px',
             'position'         : 'absolute',
-            'background-color' : '#F0F0F0',
+            'background-color' : '#faf4ed',
             'font-family'      : 'sans-serif',
             'color'            : '#666666', 
             'font-size'        : '15px'
@@ -307,7 +310,7 @@ function toggleModalMode(){   //-- login screen
             'top'              : '180px',
             'left'             : '30px',
             'position'         : 'absolute',
-            'background-color' : '#F0F0F0',
+            'background-color' : '#faf4ed',
             'font-family'      : 'sans-serif',
             'color'            : '#666666',
             'font-size'        : '15px'
@@ -561,7 +564,6 @@ function nuOpenNewWindowCheck() {
 function nuIframeWindowSizer() {
 
         if (window.top !== window.self) {
-
                 if ( window.parent.document.getElementById('nuDrag') ) {
                         var iWidthSource = parseInt(document.getElementById('nuHolder').style.width);
                         var iWidthBuffer = 20;                                                               //--offset of 20 to account for padding
@@ -572,6 +574,7 @@ function nuIframeWindowSizer() {
                         var iHeightBuffer = 20;
                         var iHeightDest   = iHeightSource + iHeightBuffer;
                         window.parent.document.getElementById('nuDrag').style.height = iHeightDest+'px';
+						window.document.body.style.background = "#e5dcd3 no-repeat center center fixed";
                 }
         }
 }
@@ -646,11 +649,12 @@ function nuCustomIframeWindow(url, w, startWidth, startHeight, startTop, startLe
             'height'           : sH,
             'top'              : sT,
             'left'             : sL,
-            'position'         : 'absolute',
+            'position'         : 'fixed',					//--24/03/2021 - Fixed position Sisyphos -was absolute
             'background-color' : '#E1E8EA',
-            'border-width'     : '0px',
-            'border-color'     : '#01A6F5',
+            'border-width'     : '2px',
+            'border-color'     : '#99918a',
             'border-style'     : 'solid',
+			'border-radius' : '5px',
             'filter'           : 'Alpha(Opacity=100)',
             'opacity'          : '1'
         })
@@ -666,7 +670,7 @@ function nuCustomIframeWindow(url, w, startWidth, startHeight, startTop, startLe
             'top'              : '0px',
             'left'             : '0px',
             'position'         : 'absolute',
-            'background-color' : '#B6B6B6',
+            'background-color' : '#99918a',
             'z-index'          : '1'
         });
 
@@ -676,10 +680,9 @@ function nuCustomIframeWindow(url, w, startWidth, startHeight, startTop, startLe
         $('#' + e.id).css({
             'width'            : '20px',
             'height'           : '20px',
-            'top'              : '1px',
+            'top'              : '0px',
             'left'             : '0px',
             'position'         : 'absolute',
-            'background-color' : '#E1E8EA',
             'z-index'          : '2'
         })
         .addClass('nuClose')
@@ -791,7 +794,7 @@ function overMainMenuBtn(){
 }
 function outMainMenuBtn(){
 	if($('#mainMenuBtn').attr('state')!="act"){
-		$('#mainMenuBtn').css("background-color", "#fff");
+		$('#mainMenuBtn').css("background-color", "transparent");
 	} else {
 		$('#mainMenuBtn').css("background-color", "#fbd19d");
 	}

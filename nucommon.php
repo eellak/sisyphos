@@ -7,8 +7,10 @@ if (session_status() == PHP_SESSION_NONE) { // PHP7 added
 	if (!($conn->connect_error)) {
 		$sql 	= "Select set_time_out_minutes From zzzsys_setup Where zzzsys_setup_id='1'";
 		$result = $conn->query($sql);
-		$row = $result->fetch_assoc();
-		$gcLifetime = $row["set_time_out_minutes"] * 60;
+		if($row = $result->fetch_assoc())
+			$gcLifetime = $row["set_time_out_minutes"] * 60;
+		else
+			$gcLifetime = 7200;
 	} else {
 		$gcLifetime = 7200;
 	}

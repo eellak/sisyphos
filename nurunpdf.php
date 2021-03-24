@@ -70,6 +70,14 @@ nuPrintReport($PDF, $REPORT, $GLOBALS['nu_report'], $JSON);
 
 nuRunQuery("DROP TABLE IF EXISTS $TABLE_ID");
 nuRunQuery("DROP TABLE IF EXISTS $TABLE_ID".'_nu_summary');
+
+if (    isset($_SERVER['HTTP_ACCEPT_ENCODING']) && 
+        strpos( $_SERVER['HTTP_ACCEPT_ENCODING'], 'gzip' ) !== false &&
+        function_exists('ob_gzhandler') &&
+        ini_get('zlib.output_compression')) {
+    header('Content-Encoding: gzip');
+}
+
 $PDF->Output('nureport.pdf', 'I');
 
 nuRemoveFiles();
