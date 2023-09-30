@@ -9,8 +9,15 @@ $DBName                      = $_SESSION['DBName'];
 $DBUser                      = $_SESSION['DBUser'];
 $DBPassword                  = $_SESSION['DBPassword'];
 
-$nuDB = new PDO("mysql:host=$DBHost;dbname=$DBName;charset=utf8", $DBUser, $DBPassword, array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"));
+$nuDB = new PDO("mysql:host=$DBHost;dbname=$DBName;charset=utf8", $DBUser, $DBPassword, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8,sql_mode="NO_ENGINE_SUBSTITUTION"'));
 $nuDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+/*$object = $nuDB->prepare("set session sql_mode = 'NO_ENGINE_SUBSTITUTION'");
+try {
+	$object->execute();
+}catch(PDOException $ex){
+
+}*/
 
 $GLOBALS['nuSetup']          = db_setup();
 

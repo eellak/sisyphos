@@ -1151,7 +1151,7 @@ function nuLogin($u, $p) {
     }	
 	
 //------------------------------------------------------------------------------------------ globeadmin    
-/*
+
     if ($u == 'globeadmin' and $p == $_SESSION['DBGlobeadminPassword']) {   //-- globeadmin
         $s               = "INSERT INTO zzzsys_session (zzzsys_session_id, sss_zzzsys_user_id, sss_timeout) VALUES ('$i','globeadmin', $time)";
         nuRunQuery($s);
@@ -1167,7 +1167,7 @@ function nuLogin($u, $p) {
         nuSet_SESSION($i, $u);                                     //-- add accessible forms, php and reports
         return $A;
     }
-*/
+
 //------------------------------------------------------------------------------------------ email login
 
     $s = "
@@ -1606,7 +1606,7 @@ function nuGetEditForm($hashData) {
     $buttons                  = nuGetEditButtons($formID, $hashData);
     $J['buttons']             = $buttons;
 
-	if(count($data['objects']) == 1){                                           //-- fake an Object
+	if(myCount($data['objects']) == 1){                                           //-- fake an Object
 	
 		$nuObject                = new stdClass;
 
@@ -1711,17 +1711,19 @@ function nuGetBreadcrumb($sqlBreadcrumb, $recs, $hashData) {
         return 'New Record';
     }
     if (trim($sqlBreadcrumb) != '') {
+		
+		if($recs){
+			foreach ($recs as $rec) {
 
-        foreach ($recs as $rec) {
-
-            if($rec->field != '' ){
-                if(isset($rec->value)){
-                    $bcData[$rec->field] = $rec->value;
-                }
-            }
+				if($rec->field != '' ){
+					if(isset($rec->value)){
+						$bcData[$rec->field] = $rec->value;
+					}
+				}
             
-        }
-
+			}
+		}
+		
         $sql = nuReplaceHashes($sqlBreadcrumb, $hashData);
         $sql = nuReplaceHashes($sql, $bcData);
         if (strtoupper(substr(trim($sql), 0, 6)) == 'SELECT') {
